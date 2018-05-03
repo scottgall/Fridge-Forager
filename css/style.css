@@ -1,0 +1,82 @@
+.indexPage {
+    background-image: url("../images/artichoke.jpg");
+    background-size: cover;                    
+    background-position: center center;
+    background-repeat: no-repeat;
+    height: 100%;
+    width: 100%;
+}
+
+.optionsPage {
+    background-image: url("../images/spoon.jpg");
+    background-size: cover;                    
+    background-position: center center;
+    background-repeat: no-repeat;
+    height: 100%;
+    width: 100%;
+}
+
+.detailsPage {
+    background-image: url("../images/bowl.jpg");
+    background-size: cover;                    
+    background-position: center center;
+    background-repeat: no-repeat;
+    height: 100%;
+    width: 100%;
+}
+
+
+.fixed-action-btn{
+    right:20px;
+    top: 20px;
+}
+
+.btn-floating {
+    background-color: transparent;
+}
+
+.btn-floating:hover {
+    background-image: url("../images/lightpaperfibers.png");
+}
+
+.btn-floating i:hover {
+    color: gray;
+}
+
+h5 {
+    font-size: 50px;
+}
+
+h6 {
+    color: white;
+    padding: 20px;
+}
+
+.enterFF {
+    color: white;
+}
+
+.my-wrapper {
+    margin: 0px;
+    padding:0px;
+    float: left;
+    width:100%;
+    position:absolute;
+    top: 50%;
+    transform: translateY(-50%) translateX(-50%);
+    left:50%;
+}
+
+footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    background-color: transparent;
+    color: white;
+    text-align: center;
+    font-size: 12px;
+}
+
