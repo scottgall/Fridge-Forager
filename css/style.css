@@ -55,7 +55,34 @@ h6 {
 .enterFF {
     color: white;
 }
+/*=======================================================================================*/
+#right{
+    float:right;
+}
 
+.apiHolder{
+    position:relative;
+    top:25px;
+    
+}
+.clearfix{
+    visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: " ";
+  clear: both;
+  height: 0;
+}
+
+#left{
+    float:left;
+    background-color:none !important;
+    font-family: 'Lobster', cursive;
+    position:relative;
+    top:-10px;
+    color:lightgray !important;
+}
+/*=======================================================================================*/
 .my-wrapper {
     margin: 0px;
     padding:0px;

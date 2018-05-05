@@ -18,7 +18,12 @@
 .materialize-red-text.text-lighten-5 {
   color: #fdeaeb !important;
 }
+/*===========================================================================*/
+#left .materialize-red{
 
+  color:lightgray !important;
+}
+/*============================================================================*/
 .materialize-red.lighten-4 {
   background-color: #f8c1c3 !important;
 }
@@ -31,7 +36,7 @@
   background-color: #f3989b !important;
 }
 
-.materialize-red-text.text-lighten-3 {
+.materialize-red-text.text-lighten-3 {e
   color: #f3989b !important;
 }
 

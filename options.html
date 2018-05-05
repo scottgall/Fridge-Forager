@@ -10,6 +10,8 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
   <link rel="stylesheet" type="text/css" href="css/style.css"/>
+  <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> 
   <!-- <link href="https://fonts.googleapis.com/css?family=Do+Hyeon|Raleway|Titillium+Web|Ubuntu" rel="stylesheet"> -->
 </head>
 
@@ -34,18 +36,30 @@
      <section>
         <div class="container">
         
-            <form>
+                <div  id="left" class="panel panel-default">
+                        <div class="panel-body">
+                       <span class="apiHolder" ><strong>See it, Before You Eat It!</strong></span>
+                        </div>
+                        <div  id="gifSection" class="panel-footer"></div>
+                      </div>
+
+            <form class ="pull-right" id="right">
                 <div class="row">
                   <div class="col">
-                    <input type="text" id="firebase" class="form-control" placeholder="Recipes">
+                      <form>
+                    <input type="text" id="Recipes" class="form-control" placeholder="Recipes">
                   </div>
                   <div class="col">
-                    <input type="text" id="firebase" class="form-control" placeholder="Extra Ingredient">
+                    <input type="text" id="Ingredients" class="form-control" placeholder="Extra Ingredient">
+
+                    <button type="submit" class="btn btn-primary pull-right" id="search">Eat!</button>
+                    </div>
                   </div>
                 </div>
               </form>
        
         </div>
+        <div class="clearfix"></div>
     </section> 
 
     <footer>
@@ -56,9 +70,8 @@
 
 
     
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> 
-  <!-- <script src="https://www.gstatic.com/firebasejs/4.13.0/firebase.js"></script> -->
-  <script type="text/javascript" src="js/materialize.min.js"></script>
+ <script src="https://www.gstatic.com/firebasejs/4.13.0/firebase.js"></script>
+  <script type="text/javascript" src="javascript/materialize.min.js"></script>
   <script src="javascript/app.js"></script>    
     
 </body>
