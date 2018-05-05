@@ -1,30 +1,4 @@
-.indexPage {
-    background-image: url("../images/artichoke.jpg");
-    background-size: cover;                    
-    background-position: center center;
-    background-repeat: no-repeat;
-    height: 100%;
-    width: 100%;
-}
-
-.optionsPage {
-    background-image: url("../images/spoon.jpg");
-    background-size: cover;                    
-    background-position: center center;
-    background-repeat: no-repeat;
-    height: 100%;
-    width: 100%;
-}
-
-.detailsPage {
-    background-image: url("../images/bowl.jpg");
-    background-size: cover;                    
-    background-position: center center;
-    background-repeat: no-repeat;
-    height: 100%;
-    width: 100%;
-}
-
+/* Style for all html pages */
 
 .fixed-action-btn{
     right:20px;
@@ -43,14 +17,31 @@
     color: gray;
 }
 
-h5 {
-    font-size: 50px;
+img {
+    height: 39px;
+    width: 30px;
 }
 
-h6 {
-    color: white;
+#ff-icon {
     padding: 20px;
 }
+/* Style for index.html page */
+
+.indexPage {
+    background-image: url("../images/artichoke.jpg");
+    background-size: cover;                    
+    background-position: center center;
+    background-repeat: no-repeat;
+    height: 100%;
+    width: 100%;
+    font-family: 'Montserrat', sans-serif;
+}
+
+h2 {
+    text-align: center;
+    /* font-weight: bold; */
+}
+
 
 .enterFF {
     color: white;
@@ -67,7 +58,13 @@ h6 {
     left:50%;
 }
 
-footer {
+a {
+    color: white;
+    text-decoration: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.index-footer {
     position: fixed;
     left: 0;
     bottom: 0;
@@ -79,4 +76,95 @@ footer {
     text-align: center;
     font-size: 12px;
 }
+
+/* Style for options.html page */
+
+.optionsPage {
+    background-image: url("../images/spoon.jpg");
+    background-size: cover;                    
+    background-position: center center;
+    background-repeat: no-repeat;
+    height: 100%;
+    width: 100%;
+    font-family: 'Montserrat', sans-serif;
+}
+
+form {
+    width: 70%;
+    margin: auto;
+    background: rgba(248, 248, 244, 0.4);    
+    padding: 20px;
+}
+
+.btn-small {
+    background-image: url("../images/lightpaperfibers.png");
+    color: gray; 
+}
+
+.btn-small:hover {
+    background-image: url("../images/lightpaperfibers.png");
+    color: gray;   
+}
+
+.row-bottom {
+    padding-bottom: px;
+    /* margin-top: -20px; */
+}
+
+.options-footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    background-color: transparent;
+    color: black;
+    text-align: center;
+    font-size: 12px;
+}
+
+/* Style for details.html page */
+
+.detailsPage {
+    background-image: url("../images/bowl.jpg");
+    background-size: cover;                    
+    background-position: center center;
+    background-repeat: no-repeat;
+    height: 100%;
+    width: 100%;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.details-container {
+    text-align: center;
+}
+
+
+.picture-ingredients {
+    /* background-image: ("../images/cheesefruit.jpg"); */
+    background-color: rgba(248, 248, 244, 0.4);
+    height: 100%;
+}
+
+.
+
+.details-footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    background-color: transparent;
+    color: white;
+    text-align: center;
+    font-size: 12px;
+}
+
+
+
+
+
+
 
