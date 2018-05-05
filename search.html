@@ -11,6 +11,7 @@
   <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
   <link rel="stylesheet" type="text/css" href="css/style.css"/>
   <link href="https://fonts.googleapis.com/css?family=Comfortaa|Josefin+Sans|Maven+Pro|Montserrat|Open+Sans" rel="stylesheet">
+  <script src="https://www.gstatic.com/firebasejs/4.13.0/firebase.js"></script>
 </head>
 
 <body>
@@ -22,7 +23,6 @@
             <ul>
                 <li><a href="index.html" class="btn-floating"><i class="material-icons">home</i></a></li>
                 <li><a href="options.html" class="btn-floating"><i class="material-icons">mode_edit</i></a></li>
-                <!-- <li><a href="details.html" class="btn-floating"><i class="material-icons">chat_bubble_outline</i></a></li> -->
             </ul> 
         </div>        
     </header>
@@ -31,52 +31,67 @@
         <img src="images/ff.png"></img>
     </div>
 
-    <form class="center">
+    <!-- <form class="center"> -->
         <h3>Dear Fellow Fridge Forager:</h3>
         <h5>Add the ingredients in your refrigerator below and get an array of delectable options for your next meal</h5>
     
-        <div class="row top-row">
+        <!-- <div class="row top-row">
             <div class="col s12">
                 <div class="input-field col s6 offset-s3">
                     <i class="material-icons prefix">mode_edit</i>
-                    <textarea id="icon_prefix2" class="materialize-textarea"></textarea>
+                    <textarea id="icon_prefix2" class="materialize-textarea"></textarea> -->
+                    <!-- <input type="text" id="button-input">
+                    <input id="add-ingredient" type="submit" value="add ingredient">
                     <label for="icon_prefix2">Food</label>
+                        <div id="buttonSection"></div>
+                </div>
+            </div>
+        </div> -->
+
+        <!-- <a class="waves-effect waves-light btn-small">Submit</a> -->
+
+        <!-- <div class= "main">click a button to display gifs below</div>
+        <div id="gifSection"></div>
+
+    </form> -->
+
+ <div class="container">
+        
+        <div class="row">
+            <div class="col-12 text-center">
+                <div class="card top">
+                    <div class="card-header">
+                        <form id="button-form">
+                        <input type="text" id="button-input">
+                        <input id="add-ingredient" type="submit" value="add ingredient">
+                        </form>
+                    </div>
+                    <div class="card-body">
+                        <div id="buttonSection"></div>
+                    </div>
                 </div>
             </div>
         </div>
+
 
         <div class="row">
-            <div class="col s12">
-                <div class="input-field col s6 offset-s3">
-                    <i class="material-icons prefix">mode_edit</i>
-                    <textarea id="icon_prefix2" class="materialize-textarea"></textarea>
-                    <label for="icon_prefix2">Food</label>
+            <div class="col-md-9">
+                <div class="card left">
+                    <div class="card-header header1">click a button to display gifs below</div>
+                    <div class="card-body main">
+                        <!-- <button id="addMore">Add more</button> -->
+                        <div id="gifSection"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card right text-center">
+                    <div class="card-header text-center">favs</div>
+                    <div class="card-body" id="favSection"></div>
                 </div>
             </div>
         </div>
-
-        <div class="row">
-            <div class="col s12">
-                <div class="input-field col s6 offset-s3">
-                    <i class="material-icons prefix">mode_edit</i>
-                    <textarea id="icon_prefix2" class="materialize-textarea"></textarea>
-                    <label for="icon_prefix2">Food</label>
-                </div>
-            </div>
-        </div>
-
-        <div class="row row-bottom">
-            <div class="col s12">
-                <div class="input-field col s6 offset-s3">
-                    <i class="material-icons prefix">mode_edit</i>
-                    <textarea id="icon_prefix2" class="materialize-textarea"></textarea>
-                    <label for="icon_prefix2">Food</label>
-                </div>
-            </div>
-        </div>
-        <a class="waves-effect waves-light btn-small">Submit</a>
-
-    </form>
+    </div>
 
     <footer>
         <div class="footer-copyright options-footer">
@@ -89,7 +104,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> 
     <!-- <script src="https://www.gstatic.com/firebasejs/4.13.0/firebase.js"></script> -->
     <script type="text/javascript" src="javascript/materialize.min.js"></script>
-    <script src="javascript/app.js"></script>    
+    <script src="javascript/index.js"></script>
+    <script type="text/javascript" src="javascript/search.js"></script>       
 </body>
 
 </html> 
