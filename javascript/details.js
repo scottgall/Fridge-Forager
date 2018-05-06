@@ -36,15 +36,23 @@ $(function() {
         .then(function(response) {
             console.log(response)
             
-            var detailsDiv = $("<div>");
+            var imageDiv = $("<div>");
+            var nameDiv = $("<div>");
+            var ingredientsDiv = $("<div>");
+            var recipeDiv = $("<div>");
             var name = $("<h2>").text(response.name);
             var image = $("<img>").attr("src", response.images["0"].hostedLargeUrl);
             var ingredients = $("<h4>").text(response.ingredientLines);
-            var recipe = $("<button>").text("go to recipe").addClass("link").attr("link", response.attribution.url);
+            var recipe = $("<a>").text("go to recipe").addClass("link").attr("link", response.attribution.url);
 
-
-            detailsDiv.append(name, image, ingredients, recipe);
-            $(".details").append(detailsDiv);
+            nameDiv.append(name);
+            $(".name").append(nameDiv);
+            imageDiv.append(image);
+            $(".image").append(imageDiv);
+            ingredientsDiv.append(ingredients);
+            $(".ingredients").append(ingredientsDiv);
+            recipeDiv.append(recipe);
+            $(".recipe").append(recipeDiv);
 
         
         
