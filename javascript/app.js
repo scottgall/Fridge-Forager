@@ -1,5 +1,5 @@
 
-    var config = {
+  /*  var config = {
     apiKey: "AIzaSyCYkK09jL1mtsfaVCCM-p1QI9CVHx89tNo",
     authDomain: "fridgeforager-40b0c.firebaseapp.com",
     databaseURL: "https://fridgeforager-40b0c.firebaseio.com",
@@ -53,7 +53,7 @@
       direction: 'left',
       hoverEnabled: false
     });
-  });*/
+  });
 
   $(function() {
 
@@ -167,6 +167,6 @@
     
     renderButtons();
     
-    });
+    });*/
         
         
