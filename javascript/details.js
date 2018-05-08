@@ -39,10 +39,22 @@ $(function() {
             var detailsDiv = $("<div>");
             var name = $("<h2>").text(response.name);
             var image = $("<img>").attr("src", response.images["0"].hostedLargeUrl);
-            var ingredients = $("<h4>").text(response.ingredientLines);
+            var ingredients = $("<div>");//.text(response.ingredientLines);
             var recipe = $("<button>").text("go to recipe").addClass("link").attr("link", response.attribution.url);
+            var ingredientString = response.ingredientLines;
+            console.log(ingredientString);
+        
+          // }
+           // 
+           // console.log(wordSplit);
 
+           for(var i = 0; i < response.ingredientLines.length; i++) {
+           var ingredient = $("<h5>").text("- " + response.ingredientLines[i]);
+               ingredients.append(ingredient); }
 
+               
+        
+          
             detailsDiv.append(name, image, ingredients, recipe);
             $(".details").append(detailsDiv);
 

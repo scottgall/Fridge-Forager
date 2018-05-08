@@ -1,5 +1,6 @@
 $(function() {
 
+
     // Initialize Firebase
     var config = { 
     apiKey: "AIzaSyCYkK09jL1mtsfaVCCM-p1QI9CVHx89tNo",
@@ -17,6 +18,9 @@ $(function() {
     var offset = 0;
     var current = "";
     var searchParam = "";
+
+
+    
     
     
     function displayGif(search) {
@@ -67,7 +71,19 @@ $(function() {
             $(".header1").empty();
             $(".header1").append($("<button>").text("add more").attr("id", "addMore"));
         });
+
     } 
+    $(".pull-left").hide();
+    $(".pull-right").hide();
+    
+   $("#add-ingredient").on("click",function(){
+        $(".foodlinks").fadeOut(3000);
+        $(".pull-right").fadeIn(3100);
+        
+
+
+        
+    }); 
     
     $(document.body).on("click", ".gifDiv", function() {
     
@@ -114,11 +130,20 @@ $(function() {
             var a = $("<button>");
             // a.addClass("gif");
             a.attr("data", gifArr[i]);
+            a.addClass("stylebutton");
             a.text(gifArr[i]);
             $("#buttonSection").append(a);
           
         }
     }
+
+     $(".search-recipes").on("click",function(){
+        $(".pull-right").hide();
+        $(".pull-left").fadeIn(2000);
+        console.log("hey");
+     });
+   console.log("hey");
+
     
     $("#add-ingredient").on("click", function(event) {
         event.preventDefault();

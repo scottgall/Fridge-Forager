@@ -8,8 +8,20 @@
   <title>Fridge Forager</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!--<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">-->
   <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
   <link rel="stylesheet" type="text/css" href="css/style.css"/>
+  <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+            <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.bundle.min.js" integrity="sha384-u/bQvRA/1bobcXlcEYpsEdFVK/vJs3+T+nXLsBYJthmdBuavHvAW6UsmqO2Gd/F9" crossorigin="anonymous"></script>
   <link href="https://fonts.googleapis.com/css?family=Comfortaa|Josefin+Sans|Maven+Pro|Montserrat|Open+Sans" rel="stylesheet">
   <script src="https://www.gstatic.com/firebasejs/4.13.0/firebase.js"></script>
 </head>
@@ -22,7 +34,7 @@
             </a>
             <ul>
                 <li><a href="index.html" class="btn-floating"><i class="material-icons">home</i></a></li>
-                <li><a href="options.html" class="btn-floating"><i class="material-icons">mode_edit</i></a></li>
+                <li><a href="search.html" class="btn-floating"><i class="material-icons">mode_edit</i></a></li>
             </ul> 
         </div>        
     </header>
@@ -59,20 +71,25 @@
         
         <div class="row">
             <div class="col-12 text-center">
+                  
                 <div class="card top">
-                    <div class="card-header">
+                    <div class="card-header chips">
                         <form id="button-form">
-                        <input type="text" id="button-input">
+                        <input type="text" id="button-input" class="custom-class">
                         <input id="add-ingredient" type="submit" value="add ingredient">
                         </form>
                     </div>
                     <div class="card-body">
-                        <div id="buttonSection"></div>
+                        <div class="chips>">
+                        <div id="buttonSection" class=""></div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
 
+    
+                
 
         <div class="row">
             <div class="col-md-9">
@@ -94,6 +111,16 @@
     </div>
 
     <footer>
+      
+        <ul>
+        <li class = "foodlinks"><a href="#"><button>Snack diet</button> </a></li>
+        <li class = "foodlinks"><a href="#"><button>Vegan diet</button> </a></li>
+        <li class = "foodlinks"><a href="#"><button> Breakfast diet </button> </a></li>
+        </ul>
+
+
+        <h4 class="pull-right"> Search for you, cause we care</h4>
+        <h4 class="pull-left">Thank you !</h4>
         <div class="footer-copyright options-footer">
             <div class="container">© 2018 Copyright Fridge Forager</div>
         </div>
