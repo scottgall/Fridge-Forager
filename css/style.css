@@ -5,6 +5,14 @@
     top: 20px;
 }
 
+.foodlinks {
+    display:inline-block;
+    margin:5px;
+    position:relative;
+    top:100px;
+
+}
+
 .btn-floating {
     background-color: transparent;
 }
@@ -15,6 +23,12 @@
 
 .btn-floating i:hover {
     color: gray;
+}
+
+.stylebutton{
+    border:none;
+    padding:1px;
+    margin:2px;
 }
 
 img {
@@ -147,7 +161,7 @@ form {
     height: 100%;
 }
 
-.
+
 
 .details-footer {
     position: fixed;
