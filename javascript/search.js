@@ -98,7 +98,7 @@ $(function() {
         var i = $(this).val();
         $("#img" + i).clone().appendTo("#favSection").children('img').addClass('img-fluid');
     });
-        
+      //////////////  
     function renderButtons() {
     
         $("#buttonSection").empty();
@@ -115,11 +115,10 @@ $(function() {
             // a.addClass("gif");
             a.attr("data", gifArr[i]);
             a.text(gifArr[i]);
-            $("#buttonSection").append(a);
-          
+            $("#buttonSection1").append(a);
         }
     }
-    
+    ///////
     $("#add-ingredient").on("click", function(event) {
         event.preventDefault();
         var button = $("#button-input").val().trim();
@@ -148,3 +147,16 @@ $(function() {
     // renderButtons();
     
     });
+
+
+//////////////////
+    document.addEventListener('DOMContentLoaded', function() {
+        var elems = document.querySelectorAll('.chips');
+        var instances = M.Chips.init(elems, options);
+      });
+      $('.chips-placeholder').chips({
+        placeholder: 'Enter Ingredient',
+        secondaryPlaceholder: '+Ingredient',
+      });
+
+     
