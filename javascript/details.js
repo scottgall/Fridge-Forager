@@ -19,6 +19,8 @@ $(function() {
     //  console.log(snap)
     //  });
 
+    var id = "";
+
     database.ref('recipe').once("value", function(snapshot) {
         recipeId = snapshot.val();
         console.log(recipeId)
@@ -41,7 +43,7 @@ $(function() {
             var image = $("<img>").attr("src", response.images["0"].hostedLargeUrl);
             var ingredients = $("<h4>").text(response.ingredientLines);
             var recipe = $("<button>").text("go to recipe").addClass("link").attr("link", response.attribution.url);
-
+            id = response.id;
 
             detailsDiv.append(name, image, ingredients, recipe);
             $(".details").append(detailsDiv);
@@ -83,5 +85,5 @@ $(function() {
         //     var loser = (winner === 1) ? 2 : 1;
         //     console.log(loser)
         // }
-
+    console.log(id)
 });
