@@ -5,6 +5,14 @@
     top: 20px;
 }
 
+.foodlinks {
+    display:inline-block;
+    margin:5px;
+    position:relative;
+    top:100px;
+
+}
+
 .btn-floating {
     background-color: transparent;
 }
