@@ -119,7 +119,7 @@ $(function() {
         var i = $(this).val();
         $("#img" + i).clone().appendTo("#favSection").children('img').addClass('img-fluid');
     });
-        
+      //////////////  
     function renderButtons() {
     
         $("#buttonSection").empty();
@@ -135,12 +135,18 @@ $(function() {
             var a = $("<div>");
             // a.addClass("gif");
             a.attr("data", gifArr[i]);
+            //a.addClass("stylebutton");
+            //a.text(gifArr[i]);
+            //$("#buttonSection1").append(a);
+=====
             a.html(gifArr[i] + " <span class='x'>X</span>");
             $("#buttonSection").append(a);
             console.log(gifArr)
           
+
         }
     }
+    
 
      $(".search-recipes").on("click",function(){
         $(".pull-right").hide();
@@ -198,3 +204,16 @@ $(function() {
     
     
     });
+
+
+//////////////////
+    document.addEventListener('DOMContentLoaded', function() {
+        var elems = document.querySelectorAll('.chips');
+        var instances = M.Chips.init(elems, options);
+      });
+      $('.chips-placeholder').chips({
+        placeholder: 'Enter Ingredient',
+        secondaryPlaceholder: '+Ingredient',
+      });
+
+     
