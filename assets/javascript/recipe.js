@@ -19,8 +19,6 @@ $(function() {
     //  console.log(snap)
     //  });
 
-    var id = "";
-
     database.ref('recipe').once("value", function(snapshot) {
         recipeId = snapshot.val();
         console.log(recipeId)
@@ -38,47 +36,15 @@ $(function() {
         .then(function(response) {
             console.log(response)
             
-            var imageDiv = $("<div>");
-            var nameDiv = $("<div>");
-            var ingredientsDiv = $("<div>");
-            var recipeDiv = $("<div>");
+            var detailsDiv = $("<div>");
             var name = $("<h2>").text(response.name);
             var image = $("<img>").attr("src", response.images["0"].hostedLargeUrl);
-//New Changes
             var ingredients = $("<h4>").text(response.ingredientLines);
-            var recipe = $("<a>").text("go to recipe").addClass("link").attr("link", response.attribution.url);
-
-            nameDiv.append(name);
-            $(".name").append(nameDiv);
-            imageDiv.append(image);
-            $(".image").append(imageDiv);
-            ingredientsDiv.append(ingredients);
-            $(".ingredients").append(ingredientsDiv);
-            recipeDiv.append(recipe);
-            $(".recipe").append(recipeDiv);
-
-
-//Old changes
-            var ingredients = $("<div>");//.text(response.ingredientLines);
             var recipe = $("<button>").text("go to recipe").addClass("link").attr("link", response.attribution.url);
-            id = response.id;
-            var ingredientString = response.ingredientLines;
-            console.log(ingredientString);
-        
-          // }
-           // 
-           // console.log(wordSplit);
 
-           for(var i = 0; i < response.ingredientLines.length; i++) {
-           var ingredient = $("<h5>").text("- " + response.ingredientLines[i]);
-               ingredients.append(ingredient); }
 
-               
-        
-          
             detailsDiv.append(name, image, ingredients, recipe);
             $(".details").append(detailsDiv);
-
 
         
         
@@ -117,5 +83,5 @@ $(function() {
         //     var loser = (winner === 1) ? 2 : 1;
         //     console.log(loser)
         // }
-    console.log(id)
+
 });

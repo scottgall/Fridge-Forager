@@ -86,11 +86,16 @@ $(function() {
     }); 
     
     $(document.body).on("click", ".gifDiv", function() {
+
+        window.location = 'details.html';
+
     
         var recipeId = $(this).attr("getId");
-        database.ref().set({
+        database.ref().child("/recipes/" + recipeId).set({
             recipe: recipeId
         });
+        database.ref("/recipes/" + recipeId).onDisconnect().remove();
+
     
     
         // var state = $(this).attr("state");
@@ -105,7 +110,7 @@ $(function() {
         //     $(this).attr("src", stillUrl);
         //     $(this).attr("state", "still");
         // }
-        window.location = 'details.html';
+        // window.location = 'details.html';
     
     
     });
@@ -127,12 +132,18 @@ $(function() {
         $("#buttonSection").append(c);
     
         for (var i = 0; i < gifArr.length; i++) {
-            var a = $("<button>");
+            var a = $("<div>");
             // a.addClass("gif");
             a.attr("data", gifArr[i]);
-            a.addClass("stylebutton");
-            a.text(gifArr[i]);
-            $("#buttonSection1").append(a);
+            //a.addClass("stylebutton");
+            //a.text(gifArr[i]);
+            //$("#buttonSection1").append(a);
+=====
+            a.html(gifArr[i] + " <span class='x'>X</span>");
+            $("#buttonSection").append(a);
+            console.log(gifArr)
+          
+
         }
     }
     
@@ -168,9 +179,29 @@ $(function() {
     $(document).on("click", "#addMore", function() {
         displayGif(searchParam);
     });
+
+    $(document).on("click", ".x", function() {
+        var data = ($(this).closest("div").attr("data"))
+        console.log(data)
+        for (var i = 0; i < gifArr.length; i++) {
+            if (data === gifArr[i]) {
+                gifArr.splice(i, 1);
+            }
+        }
+        // for (var i = 0; i < gifArr.length; i++) {
+        //     if (data === gifArr[i]) {
+        //         gifArr.splice(gifArr[i], 1);
+        //     }
+        // }
+        $(this).parent().remove();
+        console.log(gifArr)
+    });
     
     console.log('hi')
     // renderButtons();
+
+    //DETAILS PAGE
+    
     
     });
 
