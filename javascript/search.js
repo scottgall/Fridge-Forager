@@ -135,10 +135,10 @@ $(function() {
             var a = $("<div>");
             // a.addClass("gif");
             a.attr("data", gifArr[i]);
-            //a.addClass("stylebutton");
-            //a.text(gifArr[i]);
-            //$("#buttonSection1").append(a);
-=====
+            a.addClass("stylebutton");
+            a.text(gifArr[i]);
+            $("#buttonSection1").append(a);
+// =====
             a.html(gifArr[i] + " <span class='x'>X</span>");
             $("#buttonSection").append(a);
             console.log(gifArr)
@@ -206,14 +206,5 @@ $(function() {
     });
 
 
-//////////////////
-    document.addEventListener('DOMContentLoaded', function() {
-        var elems = document.querySelectorAll('.chips');
-        var instances = M.Chips.init(elems, options);
-      });
-      $('.chips-placeholder').chips({
-        placeholder: 'Enter Ingredient',
-        secondaryPlaceholder: '+Ingredient',
-      });
 
      
