@@ -194,15 +194,16 @@ form {
     background-color: #009688;
 }
 
-.row.col.s7 {
-    padding: 0px;
+.card-content {
+    background-color: rgba(169, 38, 251, 0.04);
+}
+.ingredient-row {
+    height: 58px;
     margin: 0px;
 }
-.card-body.image.col.s5 {
-    padding: 0px;
-    margin: 0px
+.included-exclude-row {
+    margin: 0px;
 }
-
 
 
 

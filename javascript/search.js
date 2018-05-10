@@ -14,194 +14,202 @@ $(function() {
     
     var database = firebase.database();
     
-    var gifArr = [];
+    var includedArr = [];
+    var excludedArr = [];
     var offset = 0;
-    var current = "";
     var searchParam = "";
+    
+    
+    function displayRecipes(search) {
 
-
-    
-    
-    
-    function displayGif(search) {
-    
-        $("#addMore").remove();
         console.log(searchParam)
-        var queryURL = "http://api.yummly.com/v1/api/recipes?_app_id=32912019&_app_key=210449776997cc0adaf6fb150addc070" + search;
+
+        $("#addMore").remove();
+        var queryURL = "http://api.yummly.com/v1/api/recipes?_app_id=32912019&_app_key=210449776997cc0adaf6fb150addc070" + search + "&maxResult=12&start=" + offset;
     
         $.ajax({
         url: queryURL,
         method: "GET"
         })
         .then(function(response) {
-            console.log(response)
             var results = response.matches;
+
+            var recipeRow1 = $("<div>");
+            recipeRow1.addClass("row");
+            var recipeRow2 = $("<div>");
+            recipeRow2.addClass("row");
     
-            for (var i = 0; i < results.length; i++) {
+            for (var i = 0; i < 6; i++) {
                 
-                var gifDiv = $("<div>");
-                gifDiv.attr("id", "img" + (offset + i));
-                gifDiv.attr("getId", results[i].id)
-                console.log(results[i].id)
-                gifDiv.addClass("d-inline-block gifDiv");
-                var image = $("<img>");
-                image.attr("src", results[i].imageUrlsBySize[90]);
-                // image.attr("still", results[i].images.fixed_height_still.url);
-                // image.attr("animate", results[i].images.fixed_height.url);
-                // image.attr("state", "still");
-                image.addClass("img img-fluid");
-    
-                // var rating = results[i].rating;
-                // var br = $("<br>");
-                var row = $("<div>").addClass("row justify-content-between gifRow");
-                var rate = $("<div>").text(results[i].recipeName);
-                var fav = $("<button>").html("<i class='material-icons'>favorite</i>");
-                fav.addClass("fav").val(offset + i);
-                row.append(rate);
-                row.append(fav);
-    
-                gifDiv.append(image);
-                // gifDiv.append(br);
-                gifDiv.append(row);
-    
-                $("#gifSection").prepend(gifDiv);
-    
-                offset += 10;
+                var recipeDiv = $("<div>");
+                recipeDiv.attr("getId", results[i].id)
+                recipeDiv.addClass("recipeDiv");
+                recipeDiv.addClass("col s2");
+                recipeDiv.html("<div class='card'><div class='card-image'><img src='" + results[i].imageUrlsBySize[90] + "'></div><div class='card-content'><p>" + results[i].recipeName + "</p></div></div>");
+
+                recipeRow1.prepend(recipeDiv)
+                // $("#results-section").prepend(recipeDiv);
             }
-            $(".header1").empty();
-            $(".header1").append($("<button>").text("add more").attr("id", "addMore"));
+            $("#results-section").prepend(recipeRow1);
+
+            for (var i = 6; i < 12; i++) {
+                
+                var recipeDiv = $("<div>");
+                recipeDiv.attr("getId", results[i].id)
+                recipeDiv.addClass("recipeDiv");
+                recipeDiv.addClass("col s2");
+                recipeDiv.html("<div class='card'><div class='card-image'><img src='" + results[i].imageUrlsBySize[90] + "'></div><div class='card-content'><p>" + results[i].recipeName + "</p></div></div>");
+
+                recipeRow2.prepend(recipeDiv)
+                // $("#results-section").prepend(recipeDiv);
+            }
+            $("#results-section").prepend(recipeRow2);
+
+            $("#addMoreSection").empty();
+        
+            var addMore = $("<button>");
+            addMore.addClass("btn waves-effect waves-light search-recipes purple darken-1").attr("id", "addMore").attr("type", "submit").attr("name", "action");
+            addMore.html("More Results<i class='material-icons right'>add_circle_outline</i>");
+            $("#addMoreSection").prepend(addMore);
         });
 
     } 
-    $(".pull-left").hide();
-    $(".pull-right").hide();
+//     $(".pull-left").hide();
+//     $(".pull-right").hide();
     
-   $("#add-ingredient").on("click",function(){
-        $(".foodlinks").fadeOut(3000);
-        $(".pull-right").fadeIn(3100);
-        
-
-
-        
-    }); 
+//    $("#add-ingredient").on("click",function(){
+//         $(".foodlinks").fadeOut(3000);
+//         $(".pull-right").fadeIn(3100);
+//     }); 
     
-    $(document.body).on("click", ".gifDiv", function() {
+    $(document.body).on("click", ".recipeDiv", function() {
 
-        window.location = 'details.html';
-
-    
         var recipeId = $(this).attr("getId");
-        database.ref().child("/recipes/" + recipeId).set({
+        database.ref().set({
             recipe: recipeId
         });
-        database.ref("/recipes/" + recipeId).onDisconnect().remove();
-
     
-    
-        // var state = $(this).attr("state");
-        // console.log(state);
-    
-        // if (state === "still") {
-        //     var animateUrl = $(this).attr("animate");
-        //     $(this).attr("src", animateUrl);
-        //     $(this).attr("state", "animate");
-        // } else if (state === "animate") {
-        //     var stillUrl = $(this).attr("still");
-        //     $(this).attr("src", stillUrl);
-        //     $(this).attr("state", "still");
-        // }
-        // window.location = 'details.html';
-    
+        window.open('details.html', '_blank');
     
     });
     
-    $(document.body).on("click", ".fav", function() {
-        var i = $(this).val();
-        $("#img" + i).clone().appendTo("#favSection").children('img').addClass('img-fluid');
-    });
-      //////////////  
-    function renderButtons() {
-    
-        $("#buttonSection").empty();
-    
-        var b = $("<button>");
-        b.addClass("search-recipes");
-        b.text("search recipes");
-        $("#buttonSection").append(b);
-        var c = $("<br>");
-        $("#buttonSection").append(c);
-    
-        for (var i = 0; i < gifArr.length; i++) {
-            var a = $("<div>");
-            // a.addClass("gif");
-            a.attr("data", gifArr[i]);
-            a.addClass("stylebutton");
-            a.text(gifArr[i]);
-            $("#buttonSection1").append(a);
-// =====
-            a.html(gifArr[i] + " <span class='x'>X</span>");
-            $("#buttonSection").append(a);
-            console.log(gifArr)
-          
 
+    function renderIngredients() {
+    
+        $("#included-section").empty();
+        $("#excluded-section").empty();
+
+    
+        for (var i = 0; i < includedArr.length; i++) {
+            var a = $("<span>");
+            a.attr("data", includedArr[i]);
+            // a.addClass("stylebutton");
+            a.text(includedArr[i]);
+            $("#included-section").append(a);
+            a.html(includedArr[i] + "<span class='x-included'>  <i class='material-icons'>cancel</i>    </span>");
+            $("#included-section").append(a);
+            console.log(includedArr)
+        }
+        for (var i = 0; i < excludedArr.length; i++) {
+            var a = $("<span>");
+            a.attr("data", excludedArr[i]);
+            // a.addClass("stylebutton");
+            a.text(excludedArr[i]);
+            $("#excluded-section").append(a);
+            a.html(excludedArr[i] + "<span class='x-excluded'>  <i class='material-icons'>cancel</i>    </span>" );
+            $("#excluded-section").append(a);
+            console.log(excludedArr)
         }
     }
-    
 
-     $(".search-recipes").on("click",function(){
-        $(".pull-right").hide();
-        $(".pull-left").fadeIn(2000);
-        console.log("hey");
-     });
-   console.log("hey");
-
+    //  $(".search-recipes").on("click",function(){
+    //     $(".pull-right").hide();
+    //     $(".pull-left").fadeIn(2000);
+    //  });
     
     $("#add-ingredient").on("click", function(event) {
         event.preventDefault();
-        var button = $("#button-input").val().trim();
-        $("#button-input").val('');
+        var button = $("#included-ingredient").val().trim();
+        $("#included-ingredient").val('');
         if (button != '') {
-            gifArr.push(button);
-            renderButtons();
+            includedArr.push(button);
+            renderIngredients();
+        }
+    });
+
+    $("#exclude-ingredient").on("click", function(event) {
+        event.preventDefault();
+        var button = $("#excluded-ingredient").val().trim();
+        $("#excluded-ingredient").val('');
+        if (button != '') {
+            excludedArr.push(button);
+            renderIngredients();
         }
     });
     
     $(document).on("click", ".search-recipes", function() {
-        console.log(gifArr)
-        $("#gifSection").empty();
+        $("#results-section").empty();
+        searchParam = "";
         offset = 0;
-        for (var i = 0; i < gifArr.length; i++) {
-            searchParam += "&allowedIngredient[]=" + gifArr[i];
+        var diet = $(".dietParam").val();
+        var allergy = $(".allergyParam").val();
+
+        for (var i = 0; i < includedArr.length; i++) {
+            searchParam += "&allowedIngredient[]=" + includedArr[i];
         }
-        displayGif(searchParam);
+        for (var i = 0; i < excludedArr.length; i++) {
+            searchParam += "&excludedIngredient[]=" + excludedArr[i];
+        }
+        if (diet) {
+            searchParam += "&allowedDiet[]=" + diet;
+        }
+        for (var i = 0; i < allergy.length; i++) {
+            searchParam += "&allowedAllergy[]=" + allergy[i];
+        }
+        displayRecipes(searchParam);
     });
     
     $(document).on("click", "#addMore", function() {
-        displayGif(searchParam);
+        offset += 12;
+        displayRecipes(searchParam);
     });
 
-    $(document).on("click", ".x", function() {
+    $(document).on("click", ".x-included", function() {
         var data = ($(this).closest("div").attr("data"))
-        console.log(data)
-        for (var i = 0; i < gifArr.length; i++) {
-            if (data === gifArr[i]) {
-                gifArr.splice(i, 1);
+        for (var i = 0; i < includedArr.length; i++) {
+            if (data === includedArr[i]) {
+                includedArr.splice(i, 1);
             }
         }
-        // for (var i = 0; i < gifArr.length; i++) {
-        //     if (data === gifArr[i]) {
-        //         gifArr.splice(gifArr[i], 1);
-        //     }
-        // }
         $(this).parent().remove();
-        console.log(gifArr)
+        console.log(includedArr)
+    });
+
+    $(document).on("click", ".x-excluded", function() {
+        var data = ($(this).closest("div").attr("data"))
+        console.log(data)
+        for (var i = 0; i < excludedArr.length; i++) {
+            if (data === excludedArr[i]) {
+                excludedArr.splice(i, 1);
+            }
+        }
+        $(this).parent().remove();
+        console.log(excludedArr)
     });
     
-    console.log('hi')
-    // renderButtons();
+    //MATERIALIZE INITIATIONS
 
-    //DETAILS PAGE
-    
+    document.addEventListener('DOMContentLoaded', function() {
+        var elems = document.querySelectorAll('select');
+        var instances = M.FormSelect.init(elems, options);
+      });
+        
+      $(document).ready(function(){
+        $('select').formSelect();
+      });  
+      $(document).ready(function() {
+        $('input#input_text, textarea#textarea2').characterCounter();
+      });
     
     });
 

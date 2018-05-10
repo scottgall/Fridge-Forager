@@ -10,7 +10,6 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <!--<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">-->
   <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
-  <link rel="stylesheet" type="text/css" href="css/style.css"/>
   <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
 
@@ -24,6 +23,8 @@
     <!--<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.bundle.min.js" integrity="sha384-u/bQvRA/1bobcXlcEYpsEdFVK/vJs3+T+nXLsBYJthmdBuavHvAW6UsmqO2Gd/F9" crossorigin="anonymous"></script> -->
   <link href="https://fonts.googleapis.com/css?family=Comfortaa|Josefin+Sans|Maven+Pro|Montserrat|Open+Sans" rel="stylesheet">
   <script src="https://www.gstatic.com/firebasejs/4.13.0/firebase.js"></script>
+  <link rel="stylesheet" type="text/css" href="css/style.css"/>
+
 </head>
 
 <body>
@@ -45,84 +46,119 @@
         <img id="logo" src="images/ff.png"></img>
     </div>
 
-    <!-- <form class="center"> -->
         <h3 class="h2align">Dear Fellow Fridge Forager:</h3>
-        <h5 class="h5align">Add the ingredients in your refrigerator below and get an array of delectable options for your next meal</h5>
+        <h5 class="h5align">Customize your search to get an array of delectable options for your next meal</h5>
     
-        <!-- <div class="row top-row">
-            <div class="col s12">
-                <div class="input-field col s6 offset-s3">
-                    <i class="material-icons prefix">mode_edit</i>
-                    <textarea id="icon_prefix2" class="materialize-textarea"></textarea> -->
-                    <!-- <input type="text" id="button-input">
-                    <input id="add-ingredient" type="submit" value="add ingredient">
-                    <label for="icon_prefix2">Food</label>
-                        <div id="buttonSection"></div>
-                </div>
-            </div>
-        </div> -->
 
-        <!-- <a class="waves-effect waves-light btn-small">Submit</a> -->
-
-        <!-- <div class= "main">click a button to display gifs below</div>
-        <div id="gifSection"></div>
-
-    </form> -->
-    
+    <br>
+    <br>
 
  <div class="container">
         
-        <div class="row">
-            <div class="col-12 text-center">
-                  
-                <div class="card top">
-                    <div class="card-header chips">
-                        <form id="button-form">
-                        <input type="text" id="button-input" class="custom-class">
-                        <input id="add-ingredient" type="submit" value="add ingredient">
-                        </form>
-                    </div>
-                    <div class="card-body">
-                        <div id="buttonSection">
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <div class ="row">
+        <div class="input-field col s6">
+            <select class="dietParam">
+                <option value="" disabled selected></option>
+                <option value="388^Lacto vegetarian">Lacto vegetarian</option>
+                <option value="389^Ovo vegetarian">Ovo vegetarian</option>
+                <option value="390^Pescetarian">Pescetarian</option>
+                <option value="386^Vegan">Vegan</option>
+                <option value="387^Lacto-ovo vegetarian">Vegetarian</option>
+                <option value="403^Paleo">Paleo</option>
+            </select>
+            <label>Choose a diet (optional)</label>
         </div>
 
-    
-                
-
-        <div class="row">
-            <div class="col-md-9">
-                <div class="card left">
-                    <div class="card-header header1">click a button to display gifs below</div>
-                    <div class="card-body main">
-                        <!-- <button id="addMore">Add more</button> -->
-                        <div id="gifSection"></div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="card right text-center">
-                    <div class="card-header text-center">favs</div>
-                    <div class="card-body" id="favSection"></div>
-                </div>
-            </div>
+        <div class="input-field col s6">
+            <select multiple class="allergyParam">
+                <option value="" disabled selected></option>
+                <option value="393^Gluten-Free">Gluten</option>
+                <option value="394^Peanut-Free">Peanut</option>
+                <option value="398^Seafood-Free">Seafood</option>
+                <option value="399^Sesame-Free">Sesame</option>
+                <option value="400^Soy-Free">Soy</option>
+                <option value="396^Dairy-Free">Dairy</option>
+                <option value="397^Egg-Free">Egg</option>
+                <option value="401^Sulfite-Free">Sulfite</option>
+                <option value="395^Tree Nut-Free">Tree Nut</option>
+                <option value="392^Wheat-Free">Wheat</option>
+            </select>
+            <label>Select allergies(optional)</label>
         </div>
     </div>
 
+    <div class="row included-exclude-row">
+        <div class="input-field col s5">
+            <input id="included-ingredient" type="text" class="validate">
+            <label for="last_name">Add an ingredient</label>
+        </div>
+        <div class="col s1">
+            <button id="add-ingredient" class="btn-floating btn-large waves-effect waves-light green"><i class="material-icons">add</i></button>
+        </div>
+        <div class="input-field col s5">
+            <input id="excluded-ingredient" type="text" class="validate">
+            <label for="last_name">Exclude an ingredient</label>
+        </div>
+        <div class="col s1">
+            <button id="exclude-ingredient" class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">block</i></button>
+        </div>
+    </div>
+
+    <div class="row ingredient-row">
+        <div id="included-section" class="col s6 center-align green-text"></div>
+        <div id="excluded-section" class="col s6 center-align red-text"></div>
+    </div>
+
+    <br>
+            <!-- <div class="row">
+            <div class="col s3">
+              <div class="card">
+                <div class="card-image">
+                  <img src="images/sample-1.jpg">
+                </div>
+                <div class="card-content">
+                  <p>I am a very simple card. I am good at containing small bits of information.
+                  I am convenient because I require little markup to use effectively.</p>
+                </div>
+                </div>
+              </div>
+
+              <div class="col s3">
+                    <div class="card">
+                      <div class="card-image">
+                        <img src="images/sample-1.jpg">
+                      </div>
+                      <div class="card-content">
+                        <p>recipename</p>
+                      </div>
+                      </div>
+                    </div>
+
+                </div> -->
+
+    <div class="row">
+        <div class="col s12">
+            <button class="btn waves-effect waves-light search-recipes purple darken-1" type="submit" name="action">search recipes<i class="material-icons right">local_dining</i>
+            </button>
+        </div>
+    </div>
+                 
+    
+                    
+         
+    <div id="addMoreSection" class="row center-align"></div>
+
+    <div id="results-section"></div>
+
+</div>
+
+
+
     <footer>
-      
-        <ul>
-        <li class = "foodlinks"><a href="#"><button>Snack diet</button> </a></li>
-        <li class = "foodlinks"><a href="#"><button>Vegan diet</button> </a></li>
-        <li class = "foodlinks"><a href="#"><button> Breakfast diet </button> </a></li>
-        </ul>
 
 
-        <h4 class="pull-right"> Search for you, cause we care</h4>
-        <h4 class="pull-left">Thank you !</h4>
+        <!-- <h4 class="pull-right"> Search for you, cause we care</h4>
+        <h4 class="pull-left">Thank you !</h4> -->
         <div class="footer-copyright options-footer">
             <div class="container">© 2018 Copyright Fridge Forager</div>
         </div>
