@@ -123,6 +123,15 @@ form {
     /* margin-top: -20px; */
 }
 
+.gifDiv {
+    float: left;
+    margin: 3px;
+}
+.img1 {
+    widows: 200px;
+    height: 200px;
+}
+
 .options-footer {
     position: fixed;
     left: 0;
@@ -135,6 +144,7 @@ form {
     text-align: center;
     font-size: 12px;
 }
+
 
 /* Style for details.html page */
 

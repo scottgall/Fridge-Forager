@@ -42,9 +42,9 @@ $(function() {
             var nameDiv = $("<div>");
             var ingredientsDiv = $("<div>");
             var recipeDiv = $("<div>");
+            
             var name = $("<h2>").text(response.name);
             var image = $("<img>").attr("src", response.images["0"].hostedLargeUrl);
-//New Changes
             var ingredients = $("<h4>").text(response.ingredientLines);
             var recipe = $("<a>").text("go to recipe").addClass("link").attr("link", response.attribution.url);
 
@@ -52,13 +52,11 @@ $(function() {
             $(".name").append(nameDiv);
             imageDiv.append(image);
             $(".image").append(imageDiv);
-            ingredientsDiv.append(ingredients);
-            $(".ingredients").append(ingredientsDiv);
+           // ingredientsDiv.append(ingredients);
+           //$(".ingredients").append(ingredientsDiv);
             recipeDiv.append(recipe);
             $(".recipe").append(recipeDiv);
 
-
-//Old changes
             var ingredients = $("<div>");//.text(response.ingredientLines);
             var recipe = $("<button>").text("go to recipe").addClass("link").attr("link", response.attribution.url);
             id = response.id;
@@ -76,8 +74,8 @@ $(function() {
                
         
           
-            detailsDiv.append(name, image, ingredients, recipe);
-            $(".details").append(detailsDiv);
+               ingredientsDiv.append(ingredients);
+            $(".ingredients").append(ingredientsDiv);
 
 
         

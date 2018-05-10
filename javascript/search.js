@@ -34,37 +34,31 @@ $(function() {
         method: "GET"
         })
         .then(function(response) {
-            console.log(response)
+
             var results = response.matches;
     
             for (var i = 0; i < results.length; i++) {
                 
                 var gifDiv = $("<div>");
+                gifDiv.addClass("gifDiv");
+                
                 gifDiv.attr("id", "img" + (offset + i));
                 gifDiv.attr("getId", results[i].id)
-                console.log(results[i].id)
-                gifDiv.addClass("d-inline-block gifDiv");
+
                 var image = $("<img>");
                 image.attr("src", results[i].imageUrlsBySize[90]);
-                // image.attr("still", results[i].images.fixed_height_still.url);
-                // image.attr("animate", results[i].images.fixed_height.url);
-                // image.attr("state", "still");
-                image.addClass("img img-fluid");
-    
-                // var rating = results[i].rating;
-                // var br = $("<br>");
-                var row = $("<div>").addClass("row justify-content-between gifRow");
+                image.addClass("img1")
+
                 var rate = $("<div>").text(results[i].recipeName);
-                var fav = $("<button>").html("<i class='material-icons'>favorite</i>");
-                fav.addClass("fav").val(offset + i);
-                row.append(rate);
-                row.append(fav);
-    
+                
+              
+
                 gifDiv.append(image);
-                // gifDiv.append(br);
-                gifDiv.append(row);
+                gifDiv.append(rate);
     
                 $("#gifSection").prepend(gifDiv);
+
+    
     
                 offset += 10;
             }
@@ -95,24 +89,6 @@ $(function() {
             recipe: recipeId
         });
         database.ref("/recipes/" + recipeId).onDisconnect().remove();
-
-    
-    
-        // var state = $(this).attr("state");
-        // console.log(state);
-    
-        // if (state === "still") {
-        //     var animateUrl = $(this).attr("animate");
-        //     $(this).attr("src", animateUrl);
-        //     $(this).attr("state", "animate");
-        // } else if (state === "animate") {
-        //     var stillUrl = $(this).attr("still");
-        //     $(this).attr("src", stillUrl);
-        //     $(this).attr("state", "still");
-        // }
-        // window.location = 'details.html';
-    
-    
     });
     
     $(document.body).on("click", ".fav", function() {
@@ -133,12 +109,11 @@ $(function() {
     
         for (var i = 0; i < gifArr.length; i++) {
             var a = $("<div>");
-            // a.addClass("gif");
+           
             a.attr("data", gifArr[i]);
             a.addClass("stylebutton");
             a.text(gifArr[i]);
             $("#buttonSection1").append(a);
-// =====
             a.html(gifArr[i] + " <span class='x'>X</span>");
             $("#buttonSection").append(a);
             console.log(gifArr)
@@ -188,21 +163,10 @@ $(function() {
                 gifArr.splice(i, 1);
             }
         }
-        // for (var i = 0; i < gifArr.length; i++) {
-        //     if (data === gifArr[i]) {
-        //         gifArr.splice(gifArr[i], 1);
-        //     }
-        // }
         $(this).parent().remove();
         console.log(gifArr)
     });
-    
-    console.log('hi')
-    // renderButtons();
 
-    //DETAILS PAGE
-    
-    
     });
 
 
