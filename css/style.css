@@ -45,6 +45,11 @@
     font-family: 'Montserrat', sans-serif;
 }
 
+
+.index-ff {
+    background-color: rgba(0, 64, 128, 0.3);
+}
+
 .h2align {
    text-align: center; 
    font-weight: bold;
@@ -85,7 +90,7 @@ a {
     font-size: 12px;
 }
 
-/* Style for options.html page */
+/* Style for search.html page */
 
 .optionsPage {
     background: url("../images/spoon.jpg") no-repeat center center fixed;
@@ -133,11 +138,14 @@ form {
 }
 
 .options-footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
     width: 100%;
     padding-bottom: 10px;
     padding-top: 10px;
     background-color: transparent;
-    color: black;
+    color:rgb(87, 87, 87);
     text-align: center;
     font-size: 12px;
 }
@@ -160,7 +168,6 @@ form {
 
 
 .picture-ingredients {
-    /* background-image: ("../images/cheesefruit.jpg"); */
     background-color: rgba(248, 248, 244, 0.4);
     height: 100%;
 }
@@ -175,12 +182,13 @@ form {
     font-size: 12px;
 }
 
+
 .card-header {
     text-align: center;
 }
 .card-body {
     padding: 25px;
-}
+} 
 .header1 {
     color : rgba(0, 0, 0, 0.349);
     text-align: center;
@@ -188,16 +196,13 @@ form {
     font-weight: bolder;
 }
 .card {
-    background-color: rgba(255, 255, 255, 0.534);
+    background-color: rgba(240,248,255, 0.534);
 }
 .ingredients {
     background-color: none;
 }
 .name {
     color: black;
-}
-.container2 {
-    /* background-color: rgba(169, 38, 251, 0.04); */
 }
 
 .card-content {
@@ -207,11 +212,14 @@ form {
     height: 58px;
     margin: 0px;
 }
+
+h5 {
+    font-size: 15px;
+}
 .included-exclude-row {
     margin: 0px;
 }
 img {
-    /* width: 100%; */
     height: 100%;
     
 }
@@ -222,13 +230,17 @@ img {
 }
 .detailsImage {
     margin: auto;
+} 
+
+.btn {
+    background: rgba(128, 128, 128, 0.5);
+    color: black;
 }
 
 
 
 
 
-
-
+*
 
 

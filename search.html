@@ -8,19 +8,7 @@
   <title>Fridge Forager</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <!--<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">-->
-  <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
-  <!-- Compiled and minified CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
-
-    <!-- Compiled and minified JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
-            <!-- Compiled and minified CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
-
-    <!-- Compiled and minified JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
-    <!--<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.bundle.min.js" integrity="sha384-u/bQvRA/1bobcXlcEYpsEdFVK/vJs3+T+nXLsBYJthmdBuavHvAW6UsmqO2Gd/F9" crossorigin="anonymous"></script> -->
   <link href="https://fonts.googleapis.com/css?family=Comfortaa|Josefin+Sans|Maven+Pro|Montserrat|Open+Sans" rel="stylesheet">
   <script src="https://www.gstatic.com/firebasejs/4.13.0/firebase.js"></script>
 
@@ -38,7 +26,6 @@
             <ul>
                 <li><a href="index.html" class="btn-floating"><i class="material-icons">home</i></a></li>
                 <li><a href="search.html" class="btn-floating"><i class="material-icons">mode_edit</i></a></li>
-                <!-- <li><a href="details.html" class="btn-floating"><i class="material-icons">chat_bubble_outline</i></a></li> -->
             </ul> 
         </div>        
     </header>
@@ -49,8 +36,8 @@
         <img id="logo" src="images/ff.png"></img>
     </div>
 
-        <h3 class="h2align">Dear Fellow Fridge Forager:</h3>
-        <h5 class="h5align">Customize your search to get an array of delectable options for your next meal</h5>
+        <h3 class="h2align" style= "color:rgb(87, 87, 87)">Dear Fellow Fridge Forager:</h3>
+        <h5 class="h5align" style= "color:rgb(87, 87, 87)">Customize your search to get an array of delectable options for your next meal</h5>
     
 
     <br>
@@ -94,17 +81,17 @@
     <div class="row included-exclude-row">
         <div class="input-field col s5">
             <input id="included-ingredient" type="text" class="validate">
-            <label for="last_name">Add an ingredient</label>
+            <label for="last_name">Click on the line to add an ingredient</label>
         </div>
         <div class="col s1">
-            <button id="add-ingredient" class="btn-floating btn-large waves-effect waves-light green"><i class="material-icons">add</i></button>
+            <button class="btn-floating btn-large waves-effect waves-light" style="background-color: #91DEB7"><i class="material-icons">add</i></button>
         </div>
         <div class="input-field col s5">
             <input id="excluded-ingredient" type="text" class="validate">
-            <label for="last_name">Exclude an ingredient</label>
+            <label for="last_name">Click on the line to exclude an ingredient</label>
         </div>
         <div class="col s1">
-            <button id="exclude-ingredient" class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">block</i></button>
+            <button id="exclude-ingredient" class="btn-floating btn-large waves-effect waves-light" style="background-color: #ECB0CE"><i class="material-icons">block</i></button>
         </div>
     </div>
 
@@ -117,7 +104,7 @@
 
     <div class="row">
         <div class="col s12">
-            <button class="btn waves-effect waves-light search-recipes purple darken-1" type="submit" name="action">search recipes<i class="material-icons right">local_dining</i>
+            <button class="btn waves-effect waves-light search-recipes darken-1" type="submit" name="action" style="background-color: #B584E5; color: white">search recipes<i class="material-icons right">local_dining</i>
             </button>
         </div>
     </div>
@@ -132,10 +119,6 @@
 
 
     <footer>
-
-
-        <!-- <h4 class="pull-right"> Search for you, cause we care</h4>
-        <h4 class="pull-left">Thank you !</h4> -->
         <div class="footer-copyright options-footer">
             <div class="container">© 2018 Copyright Fridge Forager</div>
         </div>
@@ -144,8 +127,7 @@
 
     
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> 
-    <!-- <script src="https://www.gstatic.com/firebasejs/4.13.0/firebase.js"></script> -->
-    <script type="text/javascript" src="javascript/materialize.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
     <script src="javascript/index.js"></script>    
     <script type="text/javascript" src="javascript/search.js"></script>       
 </body>

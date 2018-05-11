@@ -8,7 +8,7 @@
   <title>Fridge Forager</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
   <link rel="stylesheet" type="text/css" href="css/style.css"/>
   <link href="https://fonts.googleapis.com/css?family=Comfortaa|Josefin+Sans|Maven+Pro|Montserrat|Open+Sans" rel="stylesheet">
   <script src="https://www.gstatic.com/firebasejs/4.13.0/firebase.js"></script>
@@ -23,7 +23,6 @@
             <ul>
                 <li><a href="index.html" class="btn-floating"><i class="material-icons">home</i></a></li>
                 <li><a href="search.html" class="btn-floating"><i class="material-icons">mode_edit</i></a></li>
-                <!-- <li><a href="details.html" class="btn-floating"><i class="material-icons">chat_bubble_outline</i></a></li> -->
             </ul> 
         </div>        
     </header>
@@ -31,57 +30,37 @@
     
     <div id="ff-icon">
         <img id="logo" src="images/ff.png"></img>
-        <!-- <h2 class="header1">RECIPE DETAILS</h2> -->
     </div>
 
     
     <body>
-        <!-- <div class="container details-container">
-            <div class="row details-row">
-                <div class="col details-col s6 picture-ingredients">Hellow
-                    
-                </div>
-
-                <div class="col details-col s6 cooking-directions">
-                    <div class="row details-row">
-                            hello to you too
-                    </div>
-                    <div class="row details-row">
-                            hello to you too
-                    </div>
-                    <div class="row details-row">
-                            hello to you too
-                    </div>
-                    <div class="row details-row">
-                            hello to you too
-                    </div>
-                </div>
-            </div>
-        </div> -->
-
-    
 
     <div class="container">
         
         <div class="row" >
             <div class="col-12 text-center">
-            <h2 class="header1">RECIPE DETAILS</h2>
                 <div class="card top">
-
                     <div class="row container2">
-                            <div class="card-body name col s12 center-align"></div>
+                        <div class="card-body name col s12 center-align" style= "color:rgb(87, 87, 87)"></div>
                     </div>
+
                     <div class="row center-align">
-                    <div id="image5" class="card-body image detailsImage col s12"></div>
+                        <div id="image5" class="card-body image detailsImage col s12"></div>
                     </div>
-                    <div class="card-body ingredients"></div>
-                   <div class="card-body "><a class="recipe waves-effect waves-light btn"></a></div>
+
+                    <div class="row center-align" style= "background-color: rgba(255, 255, 255, 0.4)">
+                    <div class="card-body ingredients col s6 center-align"><h4 style= "color:rgb(87, 87, 87)">Ingredients</h4></div>
+                    <div class="card-body nutritionInfo col s6 center-align"><h4 style= "color:rgb(87, 87, 87)">Nutrition Information</h4></div>
+                    </div>
+
+                    <div class="row center-align">
+                    <div class="card-body center-align "><a class="recipe waves-effect waves-light btn"></a></div>
+                    </div>
+
                 </div>
             </div>
         </div>
-
-
-        
+    </div>
 
     </body>
 
@@ -94,8 +73,7 @@
 
     
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> 
-    <!-- <script src="https://www.gstatic.com/firebasejs/4.13.0/firebase.js"></script> -->
-    <script type="text/javascript" src="javascript/materialize.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
     <script src="javascript/index.js"></script> 
     <script type="text/javascript" src="javascript/details.js"></script>
     
