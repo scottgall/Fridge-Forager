@@ -25,7 +25,7 @@ $(function() {
         console.log(searchParam)
 
         $("#addMore").remove();
-        var queryURL = "http://api.yummly.com/v1/api/recipes?_app_id=32912019&_app_key=210449776997cc0adaf6fb150addc070" + search + "&maxResult=12&start=" + offset;
+        var queryURL = "https://api.yummly.com/v1/api/recipes?_app_id=32912019&_app_key=210449776997cc0adaf6fb150addc070" + search + "&maxResult=12&start=" + offset;
     
         $.ajax({
         url: queryURL,
