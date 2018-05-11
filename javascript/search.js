@@ -73,6 +73,8 @@ $(function() {
     $(document.body).on("click", ".recipeDiv", function() {
 
         var recipeId = $(this).attr("getId");
+        localStorage.setItem("recipe", recipeId);
+
         var user = localStorage.getItem("user");
         console.log(user)
         firebase.database().ref().push({

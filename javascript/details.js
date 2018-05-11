@@ -22,7 +22,9 @@ $(function() {
     var id = "";
 
     database.ref('recipe').once("value", function(snapshot) {
-        recipeId = snapshot.val();
+        var recipeId = localStorage.getItem("recipe");
+
+        // recipeId = snapshot.val();
         console.log(recipeId)
         displayRecipe(recipeId);
     });
