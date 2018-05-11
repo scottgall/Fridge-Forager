@@ -34,8 +34,7 @@ $(function() {
                 recipeDiv.attr("getId", results[i].id)
                 recipeDiv.addClass("recipeDiv");
                 recipeDiv.addClass("col s2");
-                recipeDiv.html("<div class='card'><div class='card-image'><img src='" + results[i].imageUrlsBySize[90] + "'></div><div class='card-content'><p>" + results[i].recipeName + "</p></div></div>");
-
+                recipeDiv.html("<div class='card'><div class='card-image'><img src='" + results[i].imageUrlsBySize[90] + "'></div><div class='card-content'><p>" + results[i].recipeName+ "</p></div></div>");
                 recipeRow1.prepend(recipeDiv)
                 // $("#results-section").prepend(recipeDiv);
             }
@@ -57,7 +56,7 @@ $(function() {
             $("#addMoreSection").empty();
         
             var addMore = $("<button>");
-            addMore.addClass("btn waves-effect waves-light purple darken-1").attr("id", "addMore").attr("type", "submit").attr("name", "action");
+            addMore.addClass("btn waves-effect waves-light purple darken-1 ").attr("id", "addMore").attr("type", "submit").attr("name", "action").attr("style","color: white");
             addMore.html("More Results<i class='material-icons right'>add_circle_outline</i>");
             $("#addMoreSection").prepend(addMore);
         });
@@ -194,6 +193,12 @@ $(function() {
     
     });
 
+    document.addEventListener('DOMContentLoaded', function() {
+        var elems = document.querySelectorAll('.fixed-action-btn');
+        var instances = M.FloatingActionButton.init(elems, {
+          direction: 'left'
+        });
+      });
 
 
      

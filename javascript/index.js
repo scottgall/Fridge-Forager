@@ -25,11 +25,7 @@
         localStorage.setItem("user", email);
       });
 
-      
-
     });
-
-
 
     //    Initialize Firebase
        var config = { 
@@ -41,9 +37,12 @@
         messagingSenderId: "709178750655"
         };
         firebase.initializeApp(config);
-
-
-
-
   });
      
+  document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.fixed-action-btn');
+    var instances = M.FloatingActionButton.init(elems, {
+      direction: 'left'
+    });
+  });
+        
