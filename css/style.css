@@ -133,9 +133,6 @@ form {
 }
 
 .options-footer {
-    position: fixed;
-    left: 0;
-    bottom: 0;
     width: 100%;
     padding-bottom: 10px;
     padding-top: 10px;
@@ -173,7 +170,7 @@ form {
     padding-bottom: 10px;
     padding-top: 10px;
     background-color: transparent;
-    color: white;
+    color: black;
     text-align: center;
     font-size: 12px;
 }
@@ -213,6 +210,16 @@ form {
 }
 .included-exclude-row {
     margin: 0px;
+}
+img {
+    width: 100%;
+    height: 100%;
+    
+}
+#image5 {
+    margin: 0px;
+    padding: 0px;
+    padding-right: 2%;
 }
 
 .fadeIn{
