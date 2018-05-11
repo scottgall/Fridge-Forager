@@ -191,14 +191,13 @@ form {
     background-color: rgba(255, 255, 255, 0.534);
 }
 .ingredients {
-    background-color: white;
+    background-color: none;
 }
 .name {
-    background-color: #009688;
-    color: white;
+    color: black;
 }
 .container2 {
-    background-color: #009688;
+    /* background-color: rgba(169, 38, 251, 0.04); */
 }
 
 .card-content {
