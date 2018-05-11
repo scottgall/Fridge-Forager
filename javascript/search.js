@@ -1,16 +1,4 @@
 $(function() {
-
-
-    // Initialize Firebase
-    var config = { 
-    apiKey: "AIzaSyCYkK09jL1mtsfaVCCM-p1QI9CVHx89tNo",
-    authDomain: "fridgeforager-40b0c.firebaseapp.com",
-    databaseURL: "https://fridgeforager-40b0c.firebaseio.com",
-    projectId: "fridgeforager-40b0c",
-    storageBucket: "fridgeforager-40b0c.appspot.com",
-    messagingSenderId: "709178750655"
-    };
-    firebase.initializeApp(config);
     
     var database = firebase.database();
     
@@ -85,9 +73,17 @@ $(function() {
     $(document.body).on("click", ".recipeDiv", function() {
 
         var recipeId = $(this).attr("getId");
-        database.ref().set({
+        var user = localStorage.getItem("user");
+        console.log(user)
+        firebase.database().ref().push({
+            user: user,
             recipe: recipeId
         });
+
+
+        // database.ref().set({
+        //     recipe: recipeId
+        // });
     
         window.open('details.html', '_blank');
     
