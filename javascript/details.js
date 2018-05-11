@@ -29,7 +29,7 @@ $(function() {
 
     function displayRecipe(x) {
 
-        var queryURL = "http://api.yummly.com/v1/api/recipe/" + x + "?_app_id=32912019&_app_key=210449776997cc0adaf6fb150addc070";
+        var queryURL = "https://api.yummly.com/v1/api/recipe/" + x + "?_app_id=32912019&_app_key=210449776997cc0adaf6fb150addc070";
 
         $.ajax({
         url: queryURL,
