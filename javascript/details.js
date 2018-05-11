@@ -1,30 +1,11 @@
 $(function() {
-
-    // Initialize Firebase
-    // var config = {
-    // apiKey: "AIzaSyCYkK09jL1mtsfaVCCM-p1QI9CVHx89tNo",
-    // authDomain: "fridgeforager-40b0c.firebaseapp.com",
-    // databaseURL: "https://fridgeforager-40b0c.firebaseio.com",
-    // projectId: "fridgeforager-40b0c",
-    // storageBucket: "fridgeforager-40b0c.appspot.com",
-    // messagingSenderId: "709178750655"
-    // };
-    // firebase.initializeApp(config);
     
     var database = firebase.database();
-
-    // var ref = firebase.database().ref();
-    // ref.once('recipe')
-    //  .then(function (snap) {
-    //  console.log(snap)
-    //  });
 
     var id = "";
 
     database.ref('recipe').once("value", function(snapshot) {
         var recipeId = localStorage.getItem("recipe");
-
-        // recipeId = snapshot.val();
         console.log(recipeId)
         displayRecipe(recipeId);
     });
@@ -65,23 +46,14 @@ $(function() {
             var ingredientString = response.ingredientLines;
             console.log(ingredientString);
         
-          // }
-           // 
-           // console.log(wordSplit);
+        for(var i = 0; i < response.ingredientLines.length; i++) {
+            var ingredient = $("<h5>").text("- " + response.ingredientLines[i]);
+            ingredients.append(ingredient); 
+        }
 
-           for(var i = 0; i < response.ingredientLines.length; i++) {
-           var ingredient = $("<h5>").text("- " + response.ingredientLines[i]);
-               ingredients.append(ingredient); }
-
-               
-        
-          
-               ingredientsDiv.append(ingredients);
-            $(".ingredients").append(ingredientsDiv);
-
-
-        
-        
+        ingredientsDiv.append(ingredients);
+        $(".ingredients").append(ingredientsDiv);
+ 
         });
     }
 
@@ -90,32 +62,10 @@ $(function() {
         var link = $(this).attr("link");
         console.log(link)
     
-    
-        // var state = $(this).attr("state");
-        // console.log(state);
-    
-        // if (state === "still") {
-        //     var animateUrl = $(this).attr("animate");
-        //     $(this).attr("src", animateUrl);
-        //     $(this).attr("state", "animate");
-        // } else if (state === "animate") {
-        //     var stillUrl = $(this).attr("still");
-        //     $(this).attr("src", stillUrl);
-        //     $(this).attr("state", "still");
-        // }
         window.location = link;
     
     
     });
 
-        // var winner = snapshot.child("winner").val();
-        // if (winner === 0) {
-        //     //update html for tie
-        //     console.log("tie")
-        // } else {
-        //     console.log(winner)
-        //     var loser = (winner === 1) ? 2 : 1;
-        //     console.log(loser)
-        // }
     console.log(id)
 });

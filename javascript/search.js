@@ -10,7 +10,8 @@ $(function() {
     
     function displayRecipes(search) {
 
-        console.log(searchParam)
+        // console.log(searchParam)
+        console.log(offset)
 
         $("#addMore").remove();
         var queryURL = "https://api.yummly.com/v1/api/recipes?_app_id=32912019&_app_key=210449776997cc0adaf6fb150addc070" + search + "&maxResult=12&start=" + offset;
@@ -56,19 +57,12 @@ $(function() {
             $("#addMoreSection").empty();
         
             var addMore = $("<button>");
-            addMore.addClass("btn waves-effect waves-light search-recipes purple darken-1").attr("id", "addMore").attr("type", "submit").attr("name", "action");
+            addMore.addClass("btn waves-effect waves-light purple darken-1").attr("id", "addMore").attr("type", "submit").attr("name", "action");
             addMore.html("More Results<i class='material-icons right'>add_circle_outline</i>");
             $("#addMoreSection").prepend(addMore);
         });
 
     } 
-//     $(".pull-left").hide();
-//     $(".pull-right").hide();
-    
-//    $("#add-ingredient").on("click",function(){
-//         $(".foodlinks").fadeOut(3000);
-//         $(".pull-right").fadeIn(3100);
-//     }); 
     
     $(document.body).on("click", ".recipeDiv", function() {
 
@@ -77,15 +71,9 @@ $(function() {
 
         var user = localStorage.getItem("user");
         console.log(user)
-        firebase.database().ref().push({
-            user: user,
-            recipe: recipeId
-        });
-
-
-        // database.ref().set({
-        //     recipe: recipeId
-        // });
+       database.ref("users").child('why').push({
+           recipe: recipeId
+       });
     
         window.open('details.html', '_blank');
     
@@ -100,30 +88,22 @@ $(function() {
     
         for (var i = 0; i < includedArr.length; i++) {
             var a = $("<span>");
-            a.attr("data", includedArr[i]);
-            // a.addClass("stylebutton");
             a.text(includedArr[i]);
             $("#included-section").append(a);
-            a.html(includedArr[i] + "<span class='x-included'>  <i class='material-icons'>cancel</i>    </span>");
+            a.html(includedArr[i] + "<span class='x-included' data='" + includedArr[i] + "'>  <i class='material-icons'>cancel</i>    </span>");
             $("#included-section").append(a);
             console.log(includedArr)
         }
         for (var i = 0; i < excludedArr.length; i++) {
             var a = $("<span>");
-            a.attr("data", excludedArr[i]);
-            // a.addClass("stylebutton");
             a.text(excludedArr[i]);
             $("#excluded-section").append(a);
-            a.html(excludedArr[i] + "<span class='x-excluded'>  <i class='material-icons'>cancel</i>    </span>" );
+            a.html(excludedArr[i] + "<span class='x-excluded' data='" + excludedArr[i] + "'>  <i class='material-icons'>cancel</i>    </span>" );
             $("#excluded-section").append(a);
             console.log(excludedArr)
         }
     }
 
-    //  $(".search-recipes").on("click",function(){
-    //     $(".pull-right").hide();
-    //     $(".pull-left").fadeIn(2000);
-    //  });
     
     $("#add-ingredient").on("click", function(event) {
         event.preventDefault();
@@ -169,11 +149,13 @@ $(function() {
     
     $(document).on("click", "#addMore", function() {
         offset += 12;
+        console.log(offset)
         displayRecipes(searchParam);
     });
 
     $(document).on("click", ".x-included", function() {
-        var data = ($(this).closest("div").attr("data"))
+        // var data = ($(this).closest("div").attr("data"))
+        var data = $(this).attr("data");
         for (var i = 0; i < includedArr.length; i++) {
             if (data === includedArr[i]) {
                 includedArr.splice(i, 1);
@@ -184,7 +166,8 @@ $(function() {
     });
 
     $(document).on("click", ".x-excluded", function() {
-        var data = ($(this).closest("div").attr("data"))
+        // var data = ($(this).closest("div").attr("data"))
+        var data = $(this).attr("data");
         console.log(data)
         for (var i = 0; i < excludedArr.length; i++) {
             if (data === excludedArr[i]) {
