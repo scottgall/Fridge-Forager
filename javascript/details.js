@@ -29,19 +29,17 @@ $(function() {
             var name = $("<h2>").text(response.name);
             var image = $("<img>").attr("src", response.images["0"].hostedLargeUrl);
             var ingredients = $("<h4>").text(response.ingredientLines);
-            var recipe = $("<a>").text("go to recipe").addClass("link").attr("link", response.attribution.url);
+            var recipe = $("<a>").text("Full recipe").addClass("link").attr("link", response.attribution.url);
 
             nameDiv.append(name);
             $(".name").append(nameDiv);
             imageDiv.append(image);
             $(".image").append(imageDiv);
-           // ingredientsDiv.append(ingredients);
-           //$(".ingredients").append(ingredientsDiv);
             recipeDiv.append(recipe);
             $(".recipe").append(recipeDiv);
 
-            var ingredients = $("<div>");//.text(response.ingredientLines);
-            var recipe = $("<button>").text("go to recipe").addClass("link").attr("link", response.attribution.url);
+            var ingredients = $("<div>");
+            // var recipe = $("<button>").text("Full recipe").addClass("link").attr("link", response.attribution.url);
             id = response.id;
             var ingredientString = response.ingredientLines;
             console.log(ingredientString);
@@ -53,7 +51,23 @@ $(function() {
 
         ingredientsDiv.append(ingredients);
         $(".ingredients").append(ingredientsDiv);
- 
+
+        var timeHeader = $("<h4>").text("Time");
+        var time = $("<h5>").text(response.totalTime);
+        var courseHeader = $("<h4>").text("Course");
+        var course = $("<h5>").text(response.attributes.course["0"]);
+        var servingsHeader = $("<h4>").text("Servings");
+        var servings = $("<h5>").text(response.numberOfServings);
+        var ratingHeader = $("<h4>").text("Rating");
+
+        $(".additional-info").append(timeHeader , time, courseHeader, course, servingsHeader, servings, ratingHeader, rating);
+        for (var i = 1; i < 6; i++){
+            var rating = $("<i>").addClass("material-icons " + i).text("star_border").attr("num", i);
+            $(".additional-info").append(rating);
+        }
+        for (var i = 1; i < response.rating + 1; i++) {
+            $("." + i).text("star");
+        }
         });
     }
 
@@ -64,9 +78,7 @@ $(function() {
     
         window.location = link;
     
-    
     });
-
     console.log(id)
 });
 

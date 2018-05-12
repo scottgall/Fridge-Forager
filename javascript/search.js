@@ -10,7 +10,7 @@ $(function() {
     
     function displayRecipes(search) {
 
-        // console.log(searchParam)
+        console.log(search)
         console.log(offset)
 
         $("#addMore").remove();
@@ -34,9 +34,8 @@ $(function() {
                 recipeDiv.attr("getId", results[i].id)
                 recipeDiv.addClass("recipeDiv");
                 recipeDiv.addClass("col s2");
-                recipeDiv.html("<div class='card'><div class='card-image'><img src='" + results[i].imageUrlsBySize[90] + "'></div><div class='card-content'><p>" + results[i].recipeName+ "</p></div></div>");
+                recipeDiv.html("<div class='card'><div class='card-image'><img class='img-shake' src='" + results[i].imageUrlsBySize[90] + "'></div><div class='card-content'><p>" + results[i].recipeName+ "</p></div></div>");
                 recipeRow1.prepend(recipeDiv)
-                // $("#results-section").prepend(recipeDiv);
             }
             $("#results-section").prepend(recipeRow1);
 
@@ -46,10 +45,9 @@ $(function() {
                 recipeDiv.attr("getId", results[i].id)
                 recipeDiv.addClass("recipeDiv");
                 recipeDiv.addClass("col s2");
-                recipeDiv.html("<div class='card'><div class='card-image'><img src='" + results[i].imageUrlsBySize[90] + "'></div><div class='card-content'><p>" + results[i].recipeName + "</p></div></div>");
+                recipeDiv.html("<div class='card'><div class='card-image'><img class='img-shake' src='" + results[i].imageUrlsBySize[90] + "'></div><div class='card-content'><p>" + results[i].recipeName + "</p></div></div>");
 
                 recipeRow2.prepend(recipeDiv)
-                // $("#results-section").prepend(recipeDiv);
             }
             $("#results-section").prepend(recipeRow2);
 
@@ -65,14 +63,24 @@ $(function() {
     
     $(document.body).on("click", ".recipeDiv", function() {
 
+        var today = new Date();
+        var dd = today.getDate();
+        var mm = today.getMonth()+1;
+        var yyyy = today.getFullYear();
+        if(dd<10) {
+            dd = '0'+dd
+        } 
+        if(mm<10) {
+            mm = '0'+mm
+        } 
+        today = mm + '-' + dd + '-' + yyyy;
+
         var recipeId = $(this).attr("getId");
         localStorage.setItem("recipe", recipeId);
 
-        var user = localStorage.getItem("user");
-        console.log(user)
-       database.ref("users").child('why').push({
-           recipe: recipeId
-       });
+        database.ref(today).push({
+           recipe: recipeId,
+        });
     
         window.open('details.html', '_blank');
     
