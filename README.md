@@ -1,7 +1,7 @@
 # FridgeForager
 Fridge Forager allows users to access and filter the million plus recipes on Yummly.com, without having to sign up for an account.  Our search functionality provides users the ability to customize results based on specified parameters.
 
-Our app simplifies Yummly’s built-in search by focusing on 3 essential search parameters: 
+Our app simplifies Yummly’s built-in search by focusing on 3 essential search parameters: <br/>
 -diet<br/>
 -allergies<br/>
 -ingredients (included & excluded)
