@@ -6,6 +6,7 @@ $(function() {
     var excludedArr = [];
     var offset = 0;
     var searchParam = "";
+    var regex = /^[a-zA-Z\s]+$/;
     
     
     function displayRecipes(search) {
@@ -114,21 +115,38 @@ $(function() {
     
     $("#add-ingredient").on("click", function(event) {
         event.preventDefault();
-        var button = $("#included-ingredient").val().trim();
+        var ingredient = $("#included-ingredient").val().trim().toLowerCase();
         $("#included-ingredient").val('');
-        if (button != '') {
-            includedArr.push(button);
+        if (ingredient != '' && regex.test(ingredient)) {
+            includedArr.push(ingredient);
+            $("#included-ingredient").removeClass("valid");
+            $("#included-label").removeClass("active");
             renderIngredients();
+        } else {
+            $("#included-ingredient").val("*choose a valid ingredient*").css("color", "red");
+            setTimeout(function(){
+                $("#included-ingredient").val(null).removeClass("valid").css("color", "black");
+                $("#included-label").removeClass("active");
+            }, 2000);
         }
     });
 
     $("#exclude-ingredient").on("click", function(event) {
         event.preventDefault();
-        var button = $("#excluded-ingredient").val().trim();
+        var ingredient = $("#excluded-ingredient").val().trim().toLowerCase();
         $("#excluded-ingredient").val('');
-        if (button != '') {
-            excludedArr.push(button);
+        if (ingredient != '' && regex.test(ingredient)) {
+            excludedArr.push(ingredient);
+            $("#excluded-ingredient").removeClass("valid");
+            $("#excluded-label").removeClass("active");
             renderIngredients();
+        } else {
+            $("#excluded-ingredient").val("*choose a valid ingredient*").css("color", "red");
+            setTimeout(function(){
+                $("#excluded-ingredient").val(null).removeClass("valid").css("color", "black");
+                $("#excluded-label").removeClass("active");
+            }, 2000);
+
         }
     });
     

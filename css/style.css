@@ -1,40 +1,32 @@
 /* Style for all html pages */
-
 .fixed-action-btn{
     right:20px;
     top: 20px;
 }
-
 .foodlinks {
     display:inline-block;
     margin:5px;
     position:relative;
     top:100px;
-
 }
-
 .btn-floating {
     background-color: transparent;
 }
-
 .btn-floating:hover {
     background-image: url("../images/lightpaperfibers.png");
 }
-
 .btn-floating i:hover {
     color: gray;
 }
-
 #logo {
     height: 39px;
     width: 30px;
 }
-
 #ff-icon {
     padding: 20px;
 }
-/* Style for index.html page */
 
+/* Style for index.html page */
 .indexPage {
     background-image: url("../images/artichoke.jpg");
     background-size: cover;                    
@@ -44,13 +36,10 @@
     width: 100%;
     font-family: 'Montserrat', sans-serif;
 }
-
 .h2align {
    text-align: center; 
    font-weight: bold;
 }
-
-
 .enterFF {
     color: white;
 }
@@ -65,13 +54,11 @@
     transform: translateY(-50%) translateX(-50%);
     left:50%;
 }
-
 a {
     color: white;
     text-decoration: none;
     -webkit-tap-highlight-color: transparent;
 }
-
 .index-footer {
     position: fixed;
     left: 0;
@@ -86,7 +73,6 @@ a {
 }
 
 /* Style for search.html page */
-
 .optionsPage {
     background: url("../images/spoon.jpg") no-repeat center center fixed;
     -webkit-background-size: cover;
@@ -98,7 +84,6 @@ a {
     width: 100%;
     font-family: 'Montserrat', sans-serif;
 }
-
 form {
     width: 70%;
     margin: auto;
@@ -117,12 +102,6 @@ form {
     background-image: url("../images/lightpaperfibers.png");
     color: gray;   
 }
-
-.row-bottom {
-    padding-bottom: px;
-    /* margin-top: -20px; */
-}
-
 .gifDiv {
     float: left;
     margin: 3px;
@@ -131,7 +110,6 @@ form {
     widows: 200px;
     height: 200px;
 }
-
 .options-footer {
     position: sticky;
     left: 0;
@@ -147,7 +125,6 @@ form {
 
 
 /* Style for details.html page */
-
 .detailsPage {
     background: url("../images/bowl.jpg") no-repeat center center fixed;
     -webkit-background-size: cover;
@@ -156,17 +133,13 @@ form {
     -o-background-size: cover;
     font-family: 'Montserrat', sans-serif;
 }
-
 .details-container {
     text-align: center;
 }
-
-
 .picture-ingredients {
     background-color: rgba(248, 248, 244, 0.4);
     height: 100%;
 }
-
 .details-footer {
     width: 100%;
     padding-bottom: 10px;
@@ -176,8 +149,6 @@ form {
     text-align: center;
     font-size: 12px;
 }
-
-
 .card-header {
     text-align: center;
 }
@@ -234,17 +205,14 @@ img {
 #results-section {
     min-height: 150px;
 }
-
-fadeIn{
-    text-align:center;
-    
- }
- .pull-left{
+.pull-left{
     text-align:center;
     margin-bottom:10px;
  }
  
- #joinin{text-align:center;}
+#joinin{
+     text-align: center;
+}
  
 .img-shake:hover {
     animation: shake 0.7s;

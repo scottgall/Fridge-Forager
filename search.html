@@ -33,11 +33,11 @@
    
 
     <div id="ff-icon">
-        <img id="logo" class='img-shake' src="images/ff.png"></img>
+        <img id="logo" src="images/ff.png"></img>
     </div>
 
         <h3 class="h2align" style= "color:rgb(87, 87, 87)">Dear Fellow Fridge Forager:</h3>
-        <h5 class="h5align" style= "color:rgb(87, 87, 87)">Customize your search to get an array of delectable options for your next meal</h5>
+        <h5 class="h5align" style= "color:rgb(87, 87, 87)">Customize the search for an array of delectable options for your next meal</h5>
     
 
     <br>
@@ -57,7 +57,7 @@
                 <option value="387^Lacto-ovo vegetarian">Vegetarian</option>
                 <option value="403^Paleo">Paleo</option>
             </select>
-            <label>Choose a diet (optional)</label>
+            <label>Select diet (optional)</label>
         </div>
 
         <div class="input-field col s6">
@@ -74,21 +74,21 @@
                 <option value="395^Tree Nut-Free">Tree Nut</option>
                 <option value="392^Wheat-Free">Wheat</option>
             </select>
-            <label>Select allergies(optional)</label>
+            <label>Select allergies (optional)</label>
         </div>
     </div>
 
     <div class="row included-exclude-row">
         <div class="input-field col s5">
             <input id="included-ingredient" type="text" class="validate">
-            <label for="last_name">Click on the line to add an ingredient</label>
+            <label id="included-label">Include an ingredient</label>
         </div>
         <div class="col s1">
             <button id="add-ingredient" class="btn-floating btn-large waves-effect waves-light" style="background-color: #91DEB7"><i class="material-icons">add</i></button>
         </div>
         <div class="input-field col s5">
             <input id="excluded-ingredient" type="text" class="validate">
-            <label for="last_name">Click on the line to exclude an ingredient</label>
+            <label id="excluded-label">Exclude an ingredient</label>
         </div>
         <div class="col s1">
             <button id="exclude-ingredient" class="btn-floating btn-large waves-effect waves-light" style="background-color: #ECB0CE"><i class="material-icons">block</i></button>

@@ -27,16 +27,17 @@
 
     });
 
-    //    Initialize Firebase
-       var config = { 
-        apiKey: "AIzaSyCYkK09jL1mtsfaVCCM-p1QI9CVHx89tNo",
-        authDomain: "fridgeforager-40b0c.firebaseapp.com",
-        databaseURL: "https://fridgeforager-40b0c.firebaseio.com",
-        projectId: "fridgeforager-40b0c",
-        storageBucket: "fridgeforager-40b0c.appspot.com",
-        messagingSenderId: "709178750655"
-        };
-        firebase.initializeApp(config);
+// Initialize Firebase
+  var config = { 
+    apiKey: "AIzaSyCYkK09jL1mtsfaVCCM-p1QI9CVHx89tNo",
+    authDomain: "fridgeforager-40b0c.firebaseapp.com",
+    databaseURL: "https://fridgeforager-40b0c.firebaseio.com",
+    projectId: "fridgeforager-40b0c",
+    storageBucket: "fridgeforager-40b0c.appspot.com",
+    messagingSenderId: "709178750655"
+  };
+  firebase.initializeApp(config);
+
   });
      
   document.addEventListener('DOMContentLoaded', function() {
