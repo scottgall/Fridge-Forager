@@ -2,9 +2,9 @@
 Fridge Forager allows users to access and filter the million plus recipes on Yummly.com, without having to sign up for an account.  Our search functionality provides users the ability to customize results based on specified parameters.
 
 Our app simplifies Yummly’s built-in search by focusing on 3 essential search parameters: 
-*diet
-*allergies
-*ingredients (included & excluded)
+-diet<br/>
+-allergies<br/>
+-ingredients (included & excluded)
 
 Fridge Forager’s clean & intuitive UI will benefit those who may not be google gurus like us, or just anyone who wants to quickly and easily search for recipes based on what’s in their fridge. 
 
@@ -26,13 +26,13 @@ When the details page is loaded, the recipe ID is grabbed from local storage and
 Javascript, Jquery, AJAX, Materialize, Firebase, and two different API's provided by Yummly.com
 
 # Paths for future development
--Additional search parameters (max prep/cook time, course, cuisine, etc...)
--Using the data stored in firebase to display most popular recipes and recently viewed recipes.
--Adding authentication to display active user’s most popular recipes and recently viewed recipes.
--Functionality for adding recipes to a ‘favorites’ section, which would be displayed when a user signs in.
--Creating public user profiles, so users can follow what other’s have favorited or rated specific recipes.
--Because the Get Recipe API doesn’t give us cooking instructions, functionality to scrape the full recipe page to get & display those functions.
--Functionality to add ingredients to a shopping list, which creates a prime-pantry or other service’s online grocery cart.
+-Additional search parameters (max prep/cook time, course, cuisine, etc...).<br/>
+-Using the data stored in firebase to display most popular recipes and recently viewed recipes.<br/>
+-Adding authentication to display active user’s most popular recipes and recently viewed recipes.<br/>
+-Functionality for adding recipes to a ‘favorites’ section, which would be displayed when a user signs in.<br/>
+-Creating public user profiles, so users can follow what other’s have favorited or rated specific recipes.<br/>
+-Because the Get Recipe API doesn’t give us cooking instructions, functionality to scrape the full recipe page to get & display those functions.<br/>
+-Functionality to add ingredients to a shopping list, which creates a prime-pantry or other service’s online grocery cart.<br/>
 -Utilizing the nutritional stats in accordance with other API’s like MyFitnessPal to calculate daily allowances/intake.
 
 # You can view the web page at:
