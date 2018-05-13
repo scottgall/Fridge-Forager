@@ -17,115 +17,102 @@
 </head>
 
 <body>
-    <header>
- 
-        <div class="fixed-action-btn">
-            <a class="btn-floating btn-large">
-                <i class="large material-icons">menu</i>
-            </a>
-            <ul>
-                <li><a href="index.html" class="btn-floating"><i class="material-icons">home</i></a></li>
-                <li><a href="search.html" class="btn-floating"><i class="material-icons">mode_edit</i></a></li>
-            </ul> 
-        </div>        
-    </header>
-
-   
 
     <div id="ff-icon">
-        <img id="logo" src="images/ff.png"></img>
+        <img id="logo" src="images/ff.png">
     </div>
-
-        <h3 class="h2align" style= "color:rgb(87, 87, 87)">Dear Fellow Fridge Forager:</h3>
-        <h5 class="h5align" style= "color:rgb(87, 87, 87)">Customize your search for an array of delectable recipes!</h5>
     
+    <div class="fixed-action-btn">
+        <a class="btn-floating btn-large">
+            <i class="large material-icons">menu</i>
+        </a>
+        <ul>
+            <li><a href="index.html" class="btn-floating"><i class="material-icons">home</i></a></li>
+            <li><a href="search.html" class="btn-floating"><i class="material-icons">search</i></a></li>
+        </ul> 
+    </div>        
 
+    <h3 class="h2align" style= "color:rgb(87, 87, 87)">Dear Fellow Fridge Forager:</h3>
+    <h5 class="h5align" style= "color:rgb(87, 87, 87)">Customize your search for an array of delectable recipes!</h5>
+    
     <br>
     <br>
 
- <div class="container">
- 
+    <div class="container">
         
-    <div class ="row">
-        <div class="input-field col s6">
-            <select class="dietParam">
-                <option value="" disabled selected></option>
-                <option value="388^Lacto vegetarian">Lacto vegetarian</option>
-                <option value="389^Ovo vegetarian">Ovo vegetarian</option>
-                <option value="390^Pescetarian">Pescetarian</option>
-                <option value="386^Vegan">Vegan</option>
-                <option value="387^Lacto-ovo vegetarian">Vegetarian</option>
-                <option value="403^Paleo">Paleo</option>
-            </select>
-            <label>Select diet (optional)</label>
+        <div class ="row">
+            <div class="input-field col s6">
+                <select class="dietParam">
+                    <option value="" disabled selected></option>
+                    <option value="388^Lacto vegetarian">Lacto vegetarian</option>
+                    <option value="389^Ovo vegetarian">Ovo vegetarian</option>
+                    <option value="390^Pescetarian">Pescetarian</option>
+                    <option value="386^Vegan">Vegan</option>
+                    <option value="387^Lacto-ovo vegetarian">Vegetarian</option>
+                    <option value="403^Paleo">Paleo</option>
+                </select>
+                <label>Select diet (optional)</label>
+            </div>
+
+            <div class="input-field col s6">
+                <select multiple class="allergyParam">
+                    <option value="" disabled selected></option>
+                    <option value="393^Gluten-Free">Gluten</option>
+                    <option value="394^Peanut-Free">Peanut</option>
+                    <option value="398^Seafood-Free">Seafood</option>
+                    <option value="399^Sesame-Free">Sesame</option>
+                    <option value="400^Soy-Free">Soy</option>
+                    <option value="396^Dairy-Free">Dairy</option>
+                    <option value="397^Egg-Free">Egg</option>
+                    <option value="401^Sulfite-Free">Sulfite</option>
+                    <option value="395^Tree Nut-Free">Tree Nut</option>
+                    <option value="392^Wheat-Free">Wheat</option>
+                </select>
+                <label>Select allergies (optional)</label>
+            </div>
         </div>
 
-        <div class="input-field col s6">
-            <select multiple class="allergyParam">
-                <option value="" disabled selected></option>
-                <option value="393^Gluten-Free">Gluten</option>
-                <option value="394^Peanut-Free">Peanut</option>
-                <option value="398^Seafood-Free">Seafood</option>
-                <option value="399^Sesame-Free">Sesame</option>
-                <option value="400^Soy-Free">Soy</option>
-                <option value="396^Dairy-Free">Dairy</option>
-                <option value="397^Egg-Free">Egg</option>
-                <option value="401^Sulfite-Free">Sulfite</option>
-                <option value="395^Tree Nut-Free">Tree Nut</option>
-                <option value="392^Wheat-Free">Wheat</option>
-            </select>
-            <label>Select allergies (optional)</label>
+        <div class="row included-exclude-row">
+            <div class="input-field col s5">
+                <input id="included-ingredient" type="text" class="validate">
+                <label id="included-label" for="included-ingredient">Include an ingredient</label>
+            </div>
+            <div class="col s1">
+                <button id="add-ingredient" class="btn-floating btn-large waves-effect waves-light" style="background-color: #91DEB7"><i class="material-icons">add</i></button>
+            </div>
+            <div class="input-field col s5">
+                <input id="excluded-ingredient" type="text" class="validate">
+                <label id="excluded-label" for="excluded-ingredient">Exclude an ingredient</label>
+            </div>
+            <div class="col s1">
+                <button id="exclude-ingredient" class="btn-floating btn-large waves-effect waves-light" style="background-color: #ECB0CE"><i class="material-icons">block</i></button>
+            </div>
         </div>
+
+        <div class="row ingredient-row">
+            <div id="included-section" class="col s6 center-align green-text"></div>
+            <div id="excluded-section" class="col s6 center-align red-text"></div>
+        </div>
+
+        <br>
+
+        <div class="row">
+            <div class="col s12">
+                <button class="btn waves-effect waves-light search-recipes darken-1" type="submit" name="action" style="background-color: #B584E5; color: white">search recipes<i class="material-icons right">local_dining</i></button>
+            </div>
+        </div>
+                        
+            
+        <div id="addMoreSection" class="row center-align"></div>
+
+        <div id="results-section"></div>
+
     </div>
 
-    <div class="row included-exclude-row">
-        <div class="input-field col s5">
-            <input id="included-ingredient" type="text" class="validate">
-            <label id="included-label" for="included-ingredient">Include an ingredient</label>
-        </div>
-        <div class="col s1">
-            <button id="add-ingredient" class="btn-floating btn-large waves-effect waves-light" style="background-color: #91DEB7"><i class="material-icons">add</i></button>
-        </div>
-        <div class="input-field col s5">
-            <input id="excluded-ingredient" type="text" class="validate">
-            <label id="excluded-label" for="excluded-ingredient">Exclude an ingredient</label>
-        </div>
-        <div class="col s1">
-            <button id="exclude-ingredient" class="btn-floating btn-large waves-effect waves-light" style="background-color: #ECB0CE"><i class="material-icons">block</i></button>
-        </div>
-    </div>
-
-    <div class="row ingredient-row">
-        <div id="included-section" class="col s6 center-align green-text"></div>
-        <div id="excluded-section" class="col s6 center-align red-text"></div>
-    </div>
-
-    <br>
-
-    <div class="row">
-        <div class="col s12">
-            <button class="btn waves-effect waves-light search-recipes darken-1" type="submit" name="action" style="background-color: #B584E5; color: white">search recipes<i class="material-icons right">local_dining</i>
-            </button>
-        </div>
-    </div>
-                       
-         
-    <div id="addMoreSection" class="row center-align"></div>
-
-    <div id="results-section"></div>
-
-</div>
-
-
-
-    <footer>
-        <div class="footer-copyright options-footer">
-            <div class="container">© 2018 Copyright Fridge Forager</div>
-        </div>
+    <footer class="footer-copyright options-footer">
+        <div class="container">© 2018 Copyright Fridge Forager</div>
     </footer>
 
-
-    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
     <script src="javascript/index.js"></script>    

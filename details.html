@@ -14,29 +14,23 @@
   <script src="https://www.gstatic.com/firebasejs/4.13.0/firebase.js"></script>
 </head>
 
-    <header>
- 
-        <div class="fixed-action-btn">
-            <a class="btn-floating btn-large">
-                <i class="large material-icons">menu</i>
-            </a>
-            <ul>
-                <li><a href="index.html" class="btn-floating"><i class="material-icons">home</i></a></li>
-                <li><a href="search.html" class="btn-floating"><i class="material-icons">mode_edit</i></a></li>
-            </ul> 
-        </div>        
-    </header>
-    
-    
+<body>
+
     <div id="ff-icon">
-        <img id="logo" src="images/ff.png"></img>
+        <img id="logo" src="images/ff.png">
     </div>
 
-    
-    <body>
+    <div class="fixed-action-btn">
+        <a class="btn-floating btn-large">
+            <i class="large material-icons">menu</i>
+        </a>
+        <ul>
+            <li><a href="index.html" class="btn-floating"><i class="material-icons">home</i></a></li>
+            <li><a href="search.html" class="btn-floating"><i class="material-icons">search</i></a></li>
+        </ul> 
+    </div>        
 
     <div class="container">
-        
         <div class="row" >
             <div class="col-12 text-center">
                 <div class="card top">
@@ -49,29 +43,22 @@
                     </div>
 
                     <div class="row center-align" style= "background-color: rgba(255, 255, 255, 0.4)">
-                    <div class="card-body ingredients col s6 center-align"><h4 style= "color:rgb(87, 87, 87)">Ingredients</h4></div>
-                    <div class="card-body additional-info col s6 center-align" style="color:rgb(87, 87, 87)"></div>
+                        <div class="card-body ingredients col s6 center-align"><h4 style= "color:rgb(87, 87, 87)">Ingredients</h4></div>
+                        <div class="card-body additional-info col s6 center-align" style="color:rgb(87, 87, 87)"></div>
                     </div>
 
                     <div class="row center-align">
-                    <div class="card-body center-align "><a class="recipe waves-effect waves-light btn"></a></div>
+                        <div class="card-body center-align "><a class="recipe waves-effect waves-light btn"></a></div>
                     </div>
-
                 </div>
             </div>
         </div>
     </div>
 
-    </body>
-
-    <footer>
-        <div class="footer-copyright details-footer">
-            <div class="container">© 2018 Copyright Fridge Forager</div>
-        </div>
+    <footer class="footer-copyright details-footer">
+        <div class="container">© 2018 Copyright Fridge Forager</div>
     </footer>
 
-
-    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
     <script src="javascript/index.js"></script> 

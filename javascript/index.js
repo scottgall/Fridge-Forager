@@ -1,31 +1,31 @@
   $(document).ready(function(){
     
-    $(document.body).on("click", "#submitAuth", function() {
+    // $(document.body).on("click", "#submitAuth", function() {
 
-        var email = $("#email").val().trim();
-        var password = $("#password").val().trim();
+    //   var email = $("#email").val().trim();
+    //   var password = $("#password").val().trim();
     
-    console.log(email + password)
+    //   console.log(email + password)
 
-    firebase.auth().signInWithEmailAndPassword(email, password).catch(function(error) {
-        // Handle Errors here.
-        var errorCode = error.code;
-        var errorMessage = error.message;
-        // ...
-        localStorage.setItem("user", email);
+    // firebase.auth().signInWithEmailAndPassword(email, password).catch(function(error) {
+    //     // Handle Errors here.
+    //     var errorCode = error.code;
+    //     var errorMessage = error.message;
+    //     // ...
+    //     localStorage.setItem("user", email);
 
-      });
+    //   });
 
-    firebase.auth().createUserWithEmailAndPassword(email, password).catch(function(error) {
-        // Handle Errors here.
-        var errorCode = error.code;
-        var errorMessage = error.message;
-        // ...
-        alert(error.message);
-        localStorage.setItem("user", email);
-      });
+    // firebase.auth().createUserWithEmailAndPassword(email, password).catch(function(error) {
+    //     // Handle Errors here.
+    //     var errorCode = error.code;
+    //     var errorMessage = error.message;
+    //     // ...
+    //     alert(error.message);
+    //     localStorage.setItem("user", email);
+    //   });
 
-    });
+    // });
 
 // Initialize Firebase
   var config = { 

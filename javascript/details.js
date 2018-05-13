@@ -1,15 +1,13 @@
 $(function() {
-    
+
     var database = firebase.database();
-
     var id = "";
-
-    database.ref('recipe').once("value", function(snapshot) {
-        var recipeId = localStorage.getItem("recipe");
-        console.log(recipeId)
-        displayRecipe(recipeId);
-    });
-
+    var recipeId = localStorage.getItem("recipe");
+        
+    console.log(recipeId)
+    
+    // uses locally stored recipeId to make Yummly Get Recipe API call
+    // displays recipe information from response
     function displayRecipe(x) {
 
         var queryURL = "https://api.yummly.com/v1/api/recipe/" + x + "?_app_id=32912019&_app_key=210449776997cc0adaf6fb150addc070";
@@ -39,52 +37,55 @@ $(function() {
             $(".recipe").append(recipeDiv);
 
             var ingredients = $("<div>");
-            // var recipe = $("<button>").text("Full recipe").addClass("link").attr("link", response.attribution.url);
             id = response.id;
             var ingredientString = response.ingredientLines;
             console.log(ingredientString);
         
-        for(var i = 0; i < response.ingredientLines.length; i++) {
-            var ingredient = $("<h5>").text("- " + response.ingredientLines[i]);
-            ingredients.append(ingredient); 
-        }
+            for(var i = 0; i < response.ingredientLines.length; i++) {
+                var ingredient = $("<h5>").text("- " + response.ingredientLines[i]);
+                ingredients.append(ingredient); 
+            }
 
-        ingredientsDiv.append(ingredients);
-        $(".ingredients").append(ingredientsDiv);
+            ingredientsDiv.append(ingredients);
+            $(".ingredients").append(ingredientsDiv);
 
-        var timeHeader = $("<h4>").text("Time");
-        var time = $("<h5>").text(response.totalTime);
-        var courseHeader = $("<h4>").text("Course");
-        var course = $("<h5>").text(response.attributes.course["0"]);
-        var servingsHeader = $("<h4>").text("Servings");
-        var servings = $("<h5>").text(response.numberOfServings);
-        var ratingHeader = $("<h4>").text("Rating");
+            var timeHeader = $("<h4>").text("Time");
+            var time = $("<h5>").text(response.totalTime);
+            var courseHeader = $("<h4>").text("Course");
+            var course = $("<h5>").text(response.attributes.course["0"]);
+            var servingsHeader = $("<h4>").text("Servings");
+            var servings = $("<h5>").text(response.numberOfServings);
+            var ratingHeader = $("<h4>").text("Rating");
 
-        $(".additional-info").append(timeHeader , time, courseHeader, course, servingsHeader, servings, ratingHeader, rating);
-        for (var i = 1; i < 6; i++){
-            var rating = $("<i>").addClass("material-icons " + i).text("star_border").attr("num", i);
-            $(".additional-info").append(rating);
-        }
-        for (var i = 1; i < response.rating + 1; i++) {
-            $("." + i).text("star");
-        }
+            $(".additional-info").append(timeHeader , time, courseHeader, course, servingsHeader, servings, ratingHeader, rating);
+            
+            for (var i = 1; i < 6; i++){
+                var rating = $("<i>").addClass("material-icons " + i).text("star_border").attr("num", i);
+                $(".additional-info").append(rating);
+            }
+            for (var i = 1; i < response.rating + 1; i++) {
+                $("." + i).text("star");
+            }
         });
     }
 
-    $(document.body).on("click", ".link", function() {
+    displayRecipe(recipeId);
 
+    // when full recipe button clicked
+    // user taken to original recipe page
+    $(document.body).on("click", ".link", function() {
         var link = $(this).attr("link");
         console.log(link)
-    
         window.location = link;
-    
     });
-    console.log(id)
-});
 
-document.addEventListener('DOMContentLoaded', function() {
-    var elems = document.querySelectorAll('.fixed-action-btn');
-    var instances = M.FloatingActionButton.init(elems, {
-      direction: 'left'
+    // Materialse initialization
+    document.addEventListener('DOMContentLoaded', function() {
+        var elems = document.querySelectorAll('.fixed-action-btn');
+        var instances = M.FloatingActionButton.init(elems, {
+            direction: 'left'
+        });
     });
-  });
+
+
+});

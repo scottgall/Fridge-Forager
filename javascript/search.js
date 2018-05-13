@@ -8,7 +8,8 @@ $(function() {
     var searchParam = "";
     var regex = /^[a-zA-Z\s]+$/;
     
-    
+    // makes Yummly Search Recipes API call
+    // displays 12 new recipes based on user parameters
     function displayRecipes(search) {
 
         console.log(search)
@@ -62,6 +63,9 @@ $(function() {
 
     } 
     
+    // when a recipe is clicked, 
+    //  recipeID stored in firebase and set in localStorage
+    //  details.html opens in new tab
     $(document.body).on("click", ".recipeDiv", function() {
 
         var today = new Date();
@@ -87,7 +91,7 @@ $(function() {
     
     });
     
-
+    // displays included & excluded ingredients
     function renderIngredients() {
     
         $("#included-section").empty();
@@ -112,7 +116,8 @@ $(function() {
         }
     }
 
-    
+    // when user clicks on include ingredient button
+    // normalizes & validates user input
     $("#add-ingredient").on("click", function(event) {
         event.preventDefault();
         var ingredient = $("#included-ingredient").val().trim().toLowerCase();
@@ -131,6 +136,8 @@ $(function() {
         }
     });
 
+    // when user clicks on exclude ingredient button
+    // normalizes & validates user input
     $("#exclude-ingredient").on("click", function(event) {
         event.preventDefault();
         var ingredient = $("#excluded-ingredient").val().trim().toLowerCase();
@@ -150,6 +157,8 @@ $(function() {
         }
     });
     
+    // when user clicks search recipes button
+    // formats search parameter inputs to added to API call
     $(document).on("click", ".search-recipes", function() {
         $("#results-section").empty();
         searchParam = "";
@@ -172,14 +181,16 @@ $(function() {
         displayRecipes(searchParam);
     });
     
+    // when user clicks add more button
+    // increases offset and calls display recipes function
     $(document).on("click", "#addMore", function() {
         offset += 12;
         console.log(offset)
         displayRecipes(searchParam);
     });
 
+    // removes included ingredient from search parameter
     $(document).on("click", ".x-included", function() {
-        // var data = ($(this).closest("div").attr("data"))
         var data = $(this).attr("data");
         for (var i = 0; i < includedArr.length; i++) {
             if (data === includedArr[i]) {
@@ -190,8 +201,8 @@ $(function() {
         console.log(includedArr)
     });
 
+    // removes excluded ingredient from search parameter
     $(document).on("click", ".x-excluded", function() {
-        // var data = ($(this).closest("div").attr("data"))
         var data = $(this).attr("data");
         console.log(data)
         for (var i = 0; i < excludedArr.length; i++) {
@@ -204,7 +215,6 @@ $(function() {
     });
     
     //MATERIALIZE INITIATIONS
-
     document.addEventListener('DOMContentLoaded', function() {
         var elems = document.querySelectorAll('select');
         var instances = M.FormSelect.init(elems, options);
@@ -217,14 +227,14 @@ $(function() {
         $('input#input_text, textarea#textarea2').characterCounter();
       });
     
-    });
-
     document.addEventListener('DOMContentLoaded', function() {
         var elems = document.querySelectorAll('.fixed-action-btn');
         var instances = M.FloatingActionButton.init(elems, {
           direction: 'left'
         });
       });
+
+});
 
 
      
