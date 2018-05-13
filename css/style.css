@@ -43,7 +43,6 @@
 .enterFF {
     color: white;
 }
-
 .my-wrapper {
     margin: 0px;
     padding:0px;
@@ -97,7 +96,6 @@ form {
     background-image: url("../images/lightpaperfibers.png");
     color: gray; 
 }
-
 .btn-small:hover {
     background-image: url("../images/lightpaperfibers.png");
     color: gray;   
@@ -170,7 +168,6 @@ form {
 .name {
     color: black;
 }
-
 .card-content {
     background-color: rgba(169, 38, 251, 0.04);
 }
@@ -178,7 +175,6 @@ form {
     height: 58px;
     margin: 0px;
 }
-
 h5 {
     font-size: 15px;
 }
@@ -197,7 +193,6 @@ img {
 .detailsImage {
     margin: auto;
 } 
-
 .btn {
     background: rgba(128, 128, 128, 0.5);
     color: black;
@@ -208,8 +203,7 @@ img {
 .pull-left{
     text-align:center;
     margin-bottom:10px;
- }
- 
+} 
 #joinin{
      text-align: center;
 }
@@ -217,7 +211,7 @@ img {
 .img-shake:hover {
     animation: shake 0.7s;
     animation-iteration-count: 0.7;
-  }
+}
   
 @keyframes shake {
     0% { transform: translate(1px, 1px) rotate(0deg); }

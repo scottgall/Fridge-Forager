@@ -123,7 +123,7 @@ $(function() {
             $("#included-label").removeClass("active");
             renderIngredients();
         } else {
-            $("#included-ingredient").val("*choose a valid ingredient*").css("color", "red");
+            $("#included-ingredient").val("*choose a valid ingredient*").css("color", "#ff4c4c");
             setTimeout(function(){
                 $("#included-ingredient").val(null).removeClass("valid").css("color", "black");
                 $("#included-label").removeClass("active");
@@ -141,7 +141,7 @@ $(function() {
             $("#excluded-label").removeClass("active");
             renderIngredients();
         } else {
-            $("#excluded-ingredient").val("*choose a valid ingredient*").css("color", "red");
+            $("#excluded-ingredient").val("*choose a valid ingredient*").css("color", "#ff4c4c");
             setTimeout(function(){
                 $("#excluded-ingredient").val(null).removeClass("valid").css("color", "black");
                 $("#excluded-label").removeClass("active");
