@@ -11,4 +11,4 @@ A recipe search engine that lets users filter recipes by dietary specifications 
 - AJAX
 - Materialize
 - Firebase
-- Yummly's Search Recipes API & Get Recipe API
+- Yummly Search Recipes API & Get Recipe API
