@@ -7,7 +7,7 @@ A recipe search engine that lets users filter recipes by dietary specifications 
 2. Open ```index.html``` in browser.
 
 ## Technologies used
-- Jquery
+- jQuery
 - AJAX
 - Materialize
 - Firebase
