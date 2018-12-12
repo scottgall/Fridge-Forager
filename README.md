@@ -1,4 +1,4 @@
-# [Fridge Forager](https://scottgall.github.io/FridgeForager/)
+# [Fridge Forager](https://scottgall.github.io/Fridge-Forager/)
 A recipe search engine that lets users filter recipes by dietary specifications and ingredient preferences.
 
 ## Local setup
