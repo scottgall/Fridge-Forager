@@ -158,7 +158,7 @@ $(function() {
     });
     
     // when user clicks search recipes button
-    // formats search parameter inputs to added to API call
+    // formats search parameter inputs to use in API call
     $(document).on("click", ".search-recipes", function() {
         $("#results-section").empty();
         searchParam = "";
