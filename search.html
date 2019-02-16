@@ -31,9 +31,7 @@
             <li><a href="search.html" class="btn-floating"><i class="material-icons" style="color: rgb(87, 87, 87)">search</i></a></li>
         </ul> 
     </div>        
-
-    <h3 class="h2align" style= "color:rgb(87, 87, 87)">Dear Fellow Fridge Forager:</h3>
-    <h5 class="h5align" style= "color:rgb(87, 87, 87)">Customize your search for an array of delectable recipes!</h5>
+    <h4 class="h5align" style= "color:rgb(87, 87, 87)">Customize your recipe search!</h4>
     
     <br>
     <br>
@@ -51,7 +49,7 @@
                     <option value="387^Lacto-ovo vegetarian">Vegetarian</option>
                     <option value="403^Paleo">Paleo</option>
                 </select>
-                <label>Select diet (optional)</label>
+                <label>Diet</label>
             </div>
 
             <div class="input-field col s6">
@@ -68,21 +66,21 @@
                     <option value="395^Tree Nut-Free">Tree Nut</option>
                     <option value="392^Wheat-Free">Wheat</option>
                 </select>
-                <label>Select allergies (optional)</label>
+                <label>Allergies</label>
             </div>
         </div>
 
         <div class="row included-exclude-row">
             <div class="input-field col s5">
                 <input id="included-ingredient" type="text" class="validate">
-                <label id="included-label" for="included-ingredient">Include an ingredient</label>
+                <label id="included-label" for="included-ingredient">Specify ingredients</label>
             </div>
             <div class="col s1">
                 <button id="add-ingredient" class="btn-floating btn-large waves-effect waves-light" style="background-color: #91DEB7"><i class="material-icons">add</i></button>
             </div>
             <div class="input-field col s5">
                 <input id="excluded-ingredient" type="text" class="validate">
-                <label id="excluded-label" for="excluded-ingredient">Exclude an ingredient</label>
+                <label id="excluded-label" for="excluded-ingredient">Exclude ingredient</label>
             </div>
             <div class="col s1">
                 <button id="exclude-ingredient" class="btn-floating btn-large waves-effect waves-light" style="background-color: #ECB0CE"><i class="material-icons">block</i></button>
@@ -108,10 +106,6 @@
         <div id="results-section"></div>
 
     </div>
-
-    <footer class="footer-copyright options-footer">
-        <div class="container">© 2018 Copyright Fridge Forager</div>
-    </footer>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>

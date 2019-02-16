@@ -28,7 +28,7 @@
 
 /* Style for index.html page */
 .indexPage {
-    background-image: url("../images/artichoke.jpg");
+    background-image: url("../images/artichoke-2.jpg");
     background-size: cover;                    
     background-position: center center;
     background-repeat: no-repeat;
@@ -208,7 +208,7 @@ img {
      text-align: center;
 }
  
-.img-shake:hover {
+/* .img-shake:hover {
     animation: shake 0.7s;
     animation-iteration-count: 0.7;
 }
@@ -225,4 +225,4 @@ img {
     80% { transform: translate(-1px, -1px) rotate(1deg); }
     90% { transform: translate(1px, 2px) rotate(0deg); }
     100% { transform: translate(1px, -2px) rotate(-1deg); }
-  }
+  } */
